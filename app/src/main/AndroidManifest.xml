@@ -4,16 +4,34 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SettingsActivity">
+            <intent-filter >
+                <action  android:name="com.birdl.birdl.SettingsActivity"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AboutActivity">
+            <intent-filter >
+                <action  android:name="com.birdl.birdl.AboutActivity"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MailActivity">
+            <intent-filter >
+                <action  android:name="com.birdl.birdl.MailActivity"/>
+                <category  android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
     </application>

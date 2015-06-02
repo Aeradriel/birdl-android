@@ -1,6 +1,17 @@
 <resources>
-    <string name="app_name">Birdl</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="policy_and_privacy">policy and privacy</string>
+    <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
+    <string name="Use_of_BIRDL">Use of BIRDL</string>
+    <string name="country_prompt">Choisir</string>
+    <string-array name="country_arrays">
+        <item>France</item>
+        <item>United States</item>
+        <item>Espagnol</item>
+        <item>Italy</item>
+    </string-array>
+    <string name="Privacy_policy">Privacy policy</string>
+    <color name="selected">#824986</color>
+    <color name="unselected">#E4DFEC</color>
 </resources>
