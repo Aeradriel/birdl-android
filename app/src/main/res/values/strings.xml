@@ -14,4 +14,19 @@
     <string name="Privacy_policy">Privacy policy</string>
     <color name="selected">#824986</color>
     <color name="unselected">#E4DFEC</color>
+    <string name="app_name">"Bird\'L"</string>
+    <string name="title_activity_user">User</string>
+    <string name="identify_fr">S\'identifier</string>
+    <string name="email">E-mail</string>
+    <string name="password_fr">Mot de passe</string>
+    <string name="welcome_fr">Bienvenue</string>
+    <string name="birdl_logo_string">Birdl_logo_string</string>
+    <string name="birdl_logo_bird">birdl_logo_bird</string>
+    <string name="connect_fr">Se connecter</string>
+    <string name="logout_fr">Se déconnecter</string>
+    <string name="save_text_fr">Sauvegarder E-mail/Mot de passe</string>
+    <string name="password_in">Mot de passe</string>
+    <string name="email_in">E-mail</string>
+    <string name="savebox">New CheckBox</string>
+    <string name="savebox_in">Garder ma session active</string>
 </resources>

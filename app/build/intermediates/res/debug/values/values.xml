@@ -20,9 +20,24 @@
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
     <string name="Use_of_BIRDL">Use of BIRDL</string>
     <string name="action_settings">Settings</string>
+    <string name="app_name">"Bird\'L"</string>
+    <string name="birdl_logo_bird">birdl_logo_bird</string>
+    <string name="birdl_logo_string">Birdl_logo_string</string>
+    <string name="connect_fr">Se connecter</string>
     <string name="country_prompt">Choisir</string>
+    <string name="email">E-mail</string>
+    <string name="email_in">E-mail</string>
     <string name="hello_world">Hello world!</string>
+    <string name="identify_fr">S\'identifier</string>
+    <string name="logout_fr">Se déconnecter</string>
+    <string name="password_fr">Mot de passe</string>
+    <string name="password_in">Mot de passe</string>
     <string name="policy_and_privacy">policy and privacy</string>
+    <string name="save_text_fr">Sauvegarder E-mail/Mot de passe</string>
+    <string name="savebox">New CheckBox</string>
+    <string name="savebox_in">Garder ma session active</string>
+    <string name="title_activity_user">User</string>
+    <string name="welcome_fr">Bienvenue</string>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="android:Theme.Holo.Light">
