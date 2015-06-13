@@ -37,7 +37,7 @@ public class Login extends Activity {
                                 password.getText().toString().equals("test")){
                             Toast.makeText(Login.this, "Successfully logged in :)!",
                                     Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent("android.intent.action.MAIN");
+                            Intent intent = new Intent("com.birdl.birdl.action.menu");
                             startActivity(intent);
                         } else {
                             Toast.makeText(Login.this, "Wrong Username/Password :(",

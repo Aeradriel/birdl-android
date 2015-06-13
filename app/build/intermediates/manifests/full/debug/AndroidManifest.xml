@@ -11,11 +11,20 @@
     <application
         android:allowBackup="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.birdl.birdl.MainActivity" >
+        <activity
+            android:name="com.birdl.birdl.Login"
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.birdl.birdl.MainActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.action.menu" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name="com.birdl.birdl.SettingsActivity" >
@@ -37,15 +46,6 @@
                 <action android:name="com.birdl.birdl.MailActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.birdl.birdl.Login"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.LOGIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
