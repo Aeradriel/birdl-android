@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
         actionBarStaff.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent a = new Intent("com.bridl.homepagebirdl.MailActivity");
+                Intent a = new Intent("com.birdl.birdl.MailActivity");
                 startActivity(a);
             }
         });
@@ -62,11 +62,11 @@ public class MainActivity extends Activity {
                     public boolean onMenuItemClick(MenuItem item) {
                         String sText = item.getTitle().toString();
                         if(sText.equals("Settings")) {
-                            Intent a = new Intent("com.bridl.homepagebirdl.SettingsActivity");
+                            Intent a = new Intent("com.birdl.birdl.SettingsActivity");
                             startActivity(a);
                         }
                         else if(sText.equals("A propos")) {
-                            Intent a = new Intent("com.bridl.homepagebirdl.AboutActivity");
+                            Intent a = new Intent("com.birdl.birdl.AboutActivity");
                             startActivity(a);
                         }
 

@@ -24,37 +24,39 @@ public final class R {
     public static final class drawable {
         public static final int birdl_dev_login_wall=0x7f020000;
         public static final int birdl_dev_login_wall2=0x7f020001;
-        public static final int logo_birdl=0x7f020002;
-        public static final int text_logo=0x7f020003;
-        public static final int website_wallpaper=0x7f020004;
+        public static final int font=0x7f020002;
+        public static final int logo_birdl=0x7f020003;
+        public static final int text_logo=0x7f020004;
+        public static final int website_wallpaper=0x7f020005;
     }
     public static final class id {
-        public static final int about=0x7f0b0018;
-        public static final int action_bar_message=0x7f0b000e;
-        public static final int action_bar_nottif=0x7f0b000f;
-        public static final int action_bar_settings=0x7f0b0010;
-        public static final int action_bar_user_name=0x7f0b000d;
-        public static final int action_bar_user_picture=0x7f0b000c;
-        public static final int action_settings=0x7f0b0016;
+        public static final int about=0x7f0b0019;
+        public static final int action_bar_message=0x7f0b000f;
+        public static final int action_bar_nottif=0x7f0b0010;
+        public static final int action_bar_settings=0x7f0b0011;
+        public static final int action_bar_user_name=0x7f0b000e;
+        public static final int action_bar_user_picture=0x7f0b000d;
+        public static final int action_settings=0x7f0b0017;
         public static final int checkBox=0x7f0b0008;
-        public static final int checkBox1=0x7f0b0013;
-        public static final int code=0x7f0b0012;
+        public static final int checkBox1=0x7f0b0014;
+        public static final int code=0x7f0b0013;
         public static final int connect_button=0x7f0b0007;
-        public static final int deconnection=0x7f0b0019;
+        public static final int deconnection=0x7f0b001a;
         public static final int imageView=0x7f0b0006;
-        public static final int language=0x7f0b0014;
+        public static final int imageView2=0x7f0b0009;
+        public static final int language=0x7f0b0015;
         public static final int mainview=0x7f0b0003;
-        public static final int settings=0x7f0b0017;
-        public static final int spinner=0x7f0b0015;
-        public static final int textView2=0x7f0b0009;
-        public static final int textView3=0x7f0b000a;
-        public static final int txt=0x7f0b0011;
+        public static final int settings=0x7f0b0018;
+        public static final int spinner=0x7f0b0016;
+        public static final int textView2=0x7f0b000a;
+        public static final int textView3=0x7f0b000b;
+        public static final int txt=0x7f0b0012;
         public static final int txt2=0x7f0b0000;
         public static final int txt3=0x7f0b0001;
         public static final int txt4=0x7f0b0002;
         public static final int user_email=0x7f0b0005;
         public static final int user_pwd=0x7f0b0004;
-        public static final int welcome_fr=0x7f0b000b;
+        public static final int welcome_fr=0x7f0b000c;
     }
     public static final class layout {
         public static final int about_activity=0x7f040000;

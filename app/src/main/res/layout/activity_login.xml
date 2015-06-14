@@ -32,7 +32,7 @@
 
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="75dp"
         android:id="@+id/imageView"
         android:contentDescription="@string/birdl_logo_string"
         android:background="@drawable/logo_birdl"
@@ -60,11 +60,11 @@
 
     <ImageView
         android:layout_width="175dp"
-        android:layout_height="100dp"
+        android:layout_height="65dp"
         android:id="@+id/imageView2"
-        android:layout_above="@+id/user_email"
-        android:layout_alignEnd="@+id/user_email"
         android:background="@drawable/text_logo"
-        android:layout_marginBottom="25dp" />
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_alignEnd="@+id/user_email"
+        android:contentDescription="text logo" />
 
 </RelativeLayout>
