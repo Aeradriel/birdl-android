@@ -11,11 +11,17 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
 
 public class Login extends Activity {
     private static EditText username;
     private static EditText password;
     private static Button login;
+    private static String token = "";
+    private String status = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +39,21 @@ public class Login extends Activity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (username.getText().toString().equals("serkan.sahin210@gmail.com") &&
-                                password.getText().toString().equals("test")){
+                        if (!username.getText().toString().isEmpty() &&
+                                !password.getText().toString().isEmpty())
+                        {
+                            try {
+                                Connection link = DriverManager.getConnection("http://163.5.84.208/auth");
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
                             Toast.makeText(Login.this, "Successfully logged in :)!",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent("com.birdl.birdl.action.menu");
                             startActivity(intent);
-                        } else {
+                        }
+                        else
+                        {
                             Toast.makeText(Login.this, "Wrong Username/Password :(",
                                     Toast.LENGTH_SHORT).show();
                         }
