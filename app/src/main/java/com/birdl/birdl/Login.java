@@ -10,10 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
+import retrofit.http.GET;
+import retrofit.http.Path;
+import retrofit.http.Query;
 
 
 public class Login extends Activity {
@@ -22,6 +25,10 @@ public class Login extends Activity {
     private static Button login;
     private static String token = "";
     private String status = "";
+    private String last_name;
+    private String first_name;
+    private String birthdate;
+    private String gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +50,7 @@ public class Login extends Activity {
                                 !password.getText().toString().isEmpty())
                         {
                             try {
-                                Connection link = DriverManager.getConnection("http://163.5.84.208/auth");
+                                Connection link = DriverManager.getConnection("http://localhost:3000/api/login");
                             } catch (SQLException e) {
                                 e.printStackTrace();
                             }
@@ -67,6 +74,13 @@ public class Login extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
+    }
+
+    public interface ApiRegister {
+
+        public static final String ENDPOINT = "http://localhost:3000/api/register";
+
+
     }
 
     @Override
