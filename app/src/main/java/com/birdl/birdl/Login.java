@@ -38,22 +38,23 @@ public class Login extends Activity {
     }
 
     public void LoginButton() {
+        String API_URL = "http://163.5.84.208:3000";
+        String ENDPOINT = "http://163.5.84.208:3000";
         username = (EditText)findViewById(R.id.user_email);
         password = (EditText)findViewById(R.id.user_pwd);
         login = (Button)findViewById(R.id.connect_button);
+
+        BirdlClient client = ServiceGenerator.createService(BirdlClient.class, API_URL);
+
+       //client.postLogin(new Call);
 
         login.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!username.getText().toString().isEmpty() &&
-                                !password.getText().toString().isEmpty())
+                        if (username.getText().toString().equals("serkan@skn.fr") &&
+                                password.getText().toString().equals("test005"))
                         {
-                            try {
-                                Connection link = DriverManager.getConnection("http://localhost:3000/api/login");
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
                             Toast.makeText(Login.this, "Successfully logged in :)!",
                                     Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent("com.birdl.birdl.action.menu");
@@ -74,13 +75,6 @@ public class Login extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_login, menu);
         return true;
-    }
-
-    public interface ApiRegister {
-
-        public static final String ENDPOINT = "http://localhost:3000/api/register";
-
-
     }
 
     @Override
