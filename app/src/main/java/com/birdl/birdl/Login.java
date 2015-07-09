@@ -52,8 +52,8 @@ public class Login extends Activity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (username.getText().toString().equals("serkan@skn.fr") &&
-                                password.getText().toString().equals("test005"))
+                        if (username.getText().toString().equals("test") &&
+                                password.getText().toString().equals("test"))
                         {
                             Toast.makeText(Login.this, "Successfully logged in :)!",
                                     Toast.LENGTH_SHORT).show();
