@@ -1,7 +1,8 @@
 <resources>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="policy_and_privacy">policy and privacy</string>
+    <string name="Policy_and_privacy">Policy and privacy</string>
+    <string name="Event">Event</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
     <string name="Use_of_BIRDL">Use of BIRDL</string>
     <string name="country_prompt">Choisir</string>

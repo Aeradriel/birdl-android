@@ -36,10 +36,10 @@ public class MainActivity extends Activity {
         myActionBar.setDisplayShowCustomEnabled(true);
         myActionBar.setCustomView(actionBarLayout);
 
-        ImageButton actionBarSent = (ImageButton) findViewById(R.id.action_bar_user_picture);
+        ImageButton actionBarPicture = (ImageButton) findViewById(R.id.action_bar_user_picture);
 
-        ImageButton actionBarStaff = (ImageButton) findViewById(R.id.action_bar_message);
-        actionBarStaff.setOnClickListener(new View.OnClickListener()
+        ImageButton actionBarMessage = (ImageButton) findViewById(R.id.action_bar_message);
+        actionBarMessage.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
                 Intent a = new Intent("com.birdl.birdl.MailActivity");
@@ -47,7 +47,14 @@ public class MainActivity extends Activity {
             }
         });
 
-        ImageButton actionBarNottif = (ImageButton) findViewById(R.id.action_bar_nottif);
+        ImageButton actionBarEvent = (ImageButton) findViewById(R.id.action_bar_event);
+        actionBarEvent.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
+                Intent b = new Intent("com.birdl.birdl.EventActivity");
+                startActivity(b);
+            }
+        });
 
         final ImageButton actionBarSettings = (ImageButton) findViewById(R.id.action_bar_settings);
         actionBarSettings.setOnClickListener(new View.OnClickListener() {

@@ -3,6 +3,31 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FCD21C">
+    android:background="#FCD21C"
+    android:weightSum="1">
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="Destinataire"
+        android:id="@+id/editText" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/editText2"
+        android:hint="Message"
+        android:layout_weight="0.45"
+        android:gravity="top" />
+
+    <Button
+        android:layout_width="154dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Envoyer"
+        android:id="@+id/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.05" />
 </LinearLayout>
