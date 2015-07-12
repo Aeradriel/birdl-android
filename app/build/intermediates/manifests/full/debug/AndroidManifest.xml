@@ -50,6 +50,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name="com.birdl.birdl.EventActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.EventActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

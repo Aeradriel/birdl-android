@@ -38,22 +38,18 @@ public class Login extends Activity {
     }
 
     public void LoginButton() {
-        String API_URL = "http://163.5.84.208:3000";
-        String ENDPOINT = "http://163.5.84.208:3000";
+
         username = (EditText)findViewById(R.id.user_email);
         password = (EditText)findViewById(R.id.user_pwd);
         login = (Button)findViewById(R.id.connect_button);
 
-        BirdlClient client = ServiceGenerator.createService(BirdlClient.class, API_URL);
-
-       //client.postLogin(new Call);
 
         login.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (username.getText().toString().equals("test") &&
-                                password.getText().toString().equals("test"))
+                        if (!username.getText().toString().isEmpty() &&
+                                !password.getText().toString().isEmpty())
                         {
                             Toast.makeText(Login.this, "Successfully logged in :)!",
                                     Toast.LENGTH_SHORT).show();
