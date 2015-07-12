@@ -8,7 +8,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#ED7F10">
+        android:background="@drawable/background_action_bar">
 
         <TextView
             android:id="@+id/txt"
