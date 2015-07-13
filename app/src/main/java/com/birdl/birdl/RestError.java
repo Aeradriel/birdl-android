@@ -7,7 +7,6 @@ import org.json.JSONObject;
  * Created by Serkan on 12/07/2015.
  */
 
-//TODO Class Exemple à modifier quand je saurais comment se nomment les values dans l'API !
 public class RestError {
 
     public Integer errorCode;

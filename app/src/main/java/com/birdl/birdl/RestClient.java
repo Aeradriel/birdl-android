@@ -11,8 +11,6 @@ import retrofit.client.OkClient;
 
 public class RestClient {
     private static RestApi REST_CLIENT;
-    private static String ROOT =
-            "http://163.5.84.208:3000/";
 
     static {
         setupRestClient();
@@ -23,6 +21,7 @@ public class RestClient {
     }
 
     private static void setupRestClient(){
+        String ROOT = "http://163.5.84.208:3000/";
         RestAdapter restAdapter = new RestAdapter.Builder()
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setEndpoint(ROOT)

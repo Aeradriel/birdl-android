@@ -14,6 +14,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
+import retrofit.RestAdapter;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.RestAdapter;
+import retrofit.client.Response;
 import retrofit.http.GET;
 import retrofit.http.Path;
 import retrofit.http.Query;
@@ -39,32 +44,45 @@ public class Login extends Activity {
 
     public void LoginButton() {
 
-        username = (EditText)findViewById(R.id.user_email);
-        password = (EditText)findViewById(R.id.user_pwd);
-        login = (Button)findViewById(R.id.connect_button);
-
+        username = (EditText) findViewById(R.id.user_email);
+        password = (EditText) findViewById(R.id.user_pwd);
+        login = (Button) findViewById(R.id.connect_button);
+        final RetrofitError error;
 
         login.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (!username.getText().toString().isEmpty() &&
-                                !password.getText().toString().isEmpty())
-                        {
-                            Toast.makeText(Login.this, "Successfully logged in :)!",
-                                    Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent("com.birdl.birdl.action.menu");
-                            startActivity(intent);
-                        }
-                        else
-                        {
-                            Toast.makeText(Login.this, "Wrong Username/Password :(",
-                                    Toast.LENGTH_SHORT).show();
-                        }
+
+                        Thread fetch = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                RestAdapter restAdapter = new RestAdapter.Builder()
+                                        .setEndpoint("http://163.5.84.208:3000/")
+                                        .build();
+
+                                RestApi api = restAdapter.create(RestApi.class);
+                                api.postLogin(username.getText().toString(), password.getText().toString(), new Callback<LoginResponse>() {
+                                    @Override
+                                    public void success(LoginResponse loginResponse, Response response) {
+                                        Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent("com.birdl.birdl.action.menu");
+                                        startActivity(intent);
+                                    }
+
+                                    @Override
+                                    public void failure(RetrofitError error) {
+                                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
+                        });
+                        fetch.start();
                     }
-                }
-        );
+                });
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

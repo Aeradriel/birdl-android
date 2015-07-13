@@ -41,7 +41,7 @@ public class UserCurrent {
 
         JSONObject jsonObject = new JSONObject();
         try {
-            jsonObject.put("username", username);
+            jsonObject.put("email", username);
             jsonObject.put("password", password);
             return jsonObject.toString();
         } catch (JSONException e){

@@ -257,7 +257,6 @@
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="android:Theme.Holo.Light">
-
     </style>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
