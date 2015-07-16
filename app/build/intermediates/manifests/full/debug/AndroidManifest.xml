@@ -57,6 +57,19 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.birdl.birdl.SignUp"
+            android:label="Inscription" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.signupactivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.birdl.birdl.Confirmation"
+            android:label="Une dernière étape..." >
+        </activity>
     </application>
 
 </manifest>

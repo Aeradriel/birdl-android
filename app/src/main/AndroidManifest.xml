@@ -1,55 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.birdl.birdl" >
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".Login"
             android:label="@string/app_name" >
-            <intent-filter >
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity">
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.action.menu" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".SettingsActivity">
-            <intent-filter >
-                <action  android:name="com.birdl.birdl.SettingsActivity"/>
-                <category  android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AboutActivity">
-            <intent-filter >
-                <action  android:name="com.birdl.birdl.AboutActivity"/>
-                <category  android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".MailActivity">
-            <intent-filter >
-                <action  android:name="com.birdl.birdl.MailActivity"/>
-                <category  android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".EventActivity">
-            <intent-filter >
-                <action  android:name="com.birdl.birdl.EventActivity"/>
-                <category  android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </activity>
+        <activity android:name=".SettingsActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.SettingsActivity" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".AboutActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.AboutActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MailActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.MailActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EventActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.EventActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:label="Inscription" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.signupactivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Confirmation"
+            android:label="Une dernière étape..." >
+        </activity>
     </application>
 
 </manifest>

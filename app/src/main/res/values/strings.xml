@@ -30,4 +30,17 @@
     <string name="email_in">E-mail</string>
     <string name="savebox">New CheckBox</string>
     <string name="savebox_in">Garder ma session active</string>
+    <string name="title_activity_sign_up">SignUp</string>
+    <string name="sign_up_sex_f">F</string>
+    <string name="sign_up_sex_m">M</string>
+    <string name="sign_up_en">Sign Up</string>
+    <string name="sign_up_date">\"YYYY/MM/DD\"</string>
+    <string name="sign_up_last_name">Nom</string>
+    <string name="sign_up_first_name">Prénom</string>
+    <string name="sign_up_ppwd">Password</string>
+    <string name="sign_up_email">E-mail</string>
+    <string name="sign_up_create">Create</string>
+    <string name="sign_up_login">S\'inscrire</string>
+    <string name="birdl_text">text logo</string>
+    <string name="title_activity_confirmation">Confirmation</string>
 </resources>

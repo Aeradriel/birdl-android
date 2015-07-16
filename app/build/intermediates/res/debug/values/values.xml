@@ -229,6 +229,7 @@
     <string name="app_name">"Bird\'L"</string>
     <string name="birdl_logo_bird">birdl_logo_bird</string>
     <string name="birdl_logo_string">Birdl_logo_string</string>
+    <string name="birdl_text">text logo</string>
     <string name="connect_fr">Se connecter</string>
     <string name="country_prompt">Choisir</string>
     <string name="email">E-mail</string>
@@ -241,11 +242,23 @@
     <string name="save_text_fr">Sauvegarder E-mail/Mot de passe</string>
     <string name="savebox">New CheckBox</string>
     <string name="savebox_in">Garder ma session active</string>
+    <string name="sign_up_create">Create</string>
+    <string name="sign_up_date">\"YYYY/MM/DD\"</string>
+    <string name="sign_up_email">E-mail</string>
+    <string name="sign_up_en">Sign Up</string>
+    <string name="sign_up_first_name">Prénom</string>
+    <string name="sign_up_last_name">Nom</string>
+    <string name="sign_up_login">S\'inscrire</string>
+    <string name="sign_up_ppwd">Password</string>
+    <string name="sign_up_sex_f">F</string>
+    <string name="sign_up_sex_m">M</string>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <string name="status_bar_notification_info_overflow">999+</string>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
+    <string name="title_activity_confirmation">Confirmation</string>
+    <string name="title_activity_sign_up">SignUp</string>
     <string name="title_activity_user">User</string>
     <string name="welcome_fr">Bienvenue</string>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->

@@ -28,12 +28,7 @@ public class Login extends Activity {
     private static EditText username;
     private static EditText password;
     private static Button login;
-    private static String token = "";
-    private String status = "";
-    private String last_name;
-    private String first_name;
-    private String birthdate;
-    private String gender;
+    private static Button sign_up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +42,7 @@ public class Login extends Activity {
         username = (EditText) findViewById(R.id.user_email);
         password = (EditText) findViewById(R.id.user_pwd);
         login = (Button) findViewById(R.id.connect_button);
+        sign_up = (Button) findViewById(R.id.sign_up);
         final RetrofitError error;
 
         login.setOnClickListener(
@@ -80,7 +76,20 @@ public class Login extends Activity {
                         fetch.start();
                     }
                 });
+
+
+        sign_up.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View t) {
+                    Intent intent = new Intent("com.birdl.birdl.signupactivity");
+                    startActivity(intent);
+                }
+            }
+        );
+
     }
+
 
 
 
