@@ -44,9 +44,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".EventActivity" >
+        <activity android:name=".CreateEventActivity" >
             <intent-filter>
-                <action android:name="com.birdl.birdl.EventActivity" />
+                <action android:name="com.birdl.birdl.CreateEventActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SearchEventActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.SearchEventActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

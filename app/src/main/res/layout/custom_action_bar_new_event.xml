@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/mail"
+            android:text="@string/new_event"
             android:textSize="35sp" />
 
     </LinearLayout>

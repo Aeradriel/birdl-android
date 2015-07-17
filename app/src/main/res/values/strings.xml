@@ -2,9 +2,27 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="Policy_and_privacy">Policy and privacy</string>
-    <string name="Event">Event</string>
+    <string name="new_event">New event</string>
+    <string name="search_event">Search event</string>
+    <string name="mail">Mail</string>
+    <string name="places_remaining">Places remaining</string>
+    <string name="event_type">Event type</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
     <string name="Use_of_BIRDL">Use of BIRDL</string>
+    <string name="event_prompt">Event type</string>
+    <string-array name="event_type_create">
+        <item>Face à Face</item>
+        <item>Chat en ligne</item>
+        <item>Sortie touristique</item>
+        <item>Evénement de groupe</item>
+    </string-array>
+    <string-array name="event_type">
+        <item>Non renseigné</item>
+        <item>Face à Face</item>
+        <item>Chat en ligne</item>
+        <item>Sortie touristique</item>
+        <item>Evénement de groupe</item>
+    </string-array>
     <string name="country_prompt">Choisir</string>
     <string-array name="country_arrays">
         <item>France</item>

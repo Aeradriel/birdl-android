@@ -4,19 +4,12 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.SubMenu;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.PopupMenu;
-import android.widget.Toast;
-
-import com.birdl.birdl.R;
 
 
 public class MainActivity extends Activity {
@@ -47,12 +40,30 @@ public class MainActivity extends Activity {
             }
         });
 
-        ImageButton actionBarEvent = (ImageButton) findViewById(R.id.action_bar_event);
+        final ImageButton actionBarEvent = (ImageButton) findViewById(R.id.action_bar_event);
         actionBarEvent.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent b = new Intent("com.birdl.birdl.EventActivity");
-                startActivity(b);
+                PopupMenu popupEvent = new PopupMenu(MainActivity.this, actionBarEvent);
+
+                MenuInflater inflaterEvent = popupEvent.getMenuInflater();
+                inflaterEvent.inflate(R.menu.menu_event, popupEvent.getMenu());
+
+                popupEvent.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        String sText = item.getTitle().toString();
+                        if(sText.equals("Create event")) {
+                            Intent a = new Intent("com.birdl.birdl.CreateEventActivity");
+                            startActivity(a);
+                        }
+                        else if(sText.equals("Search event")) {
+                            Intent a = new Intent("com.birdl.birdl.SearchEventActivity");
+                            startActivity(a);
+                        }
+                        return true;
+                    }
+                });
+                popupEvent.show();
             }
         });
 
@@ -60,12 +71,12 @@ public class MainActivity extends Activity {
         actionBarSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                PopupMenu popup = new PopupMenu(MainActivity.this, actionBarSettings);
+                PopupMenu popupOption = new PopupMenu(MainActivity.this, actionBarSettings);
 
-                MenuInflater inflater = popup.getMenuInflater();
-                inflater.inflate(R.menu.other_option, popup.getMenu());
+                MenuInflater inflaterOption = popupOption.getMenuInflater();
+                inflaterOption.inflate(R.menu.other_option, popupOption.getMenu());
 
-                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                popupOption.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         String sText = item.getTitle().toString();
                         if(sText.equals("Settings")) {
@@ -76,16 +87,10 @@ public class MainActivity extends Activity {
                             Intent a = new Intent("com.birdl.birdl.AboutActivity");
                             startActivity(a);
                         }
-
-//                        Toast.makeText(
-//                                MainActivity.this,
-//                                "You Clicked : " + item.getTitle(),
-//                                Toast.LENGTH_SHORT
-//                        ).show();
                         return true;
                     }
                 });
-                popup.show();
+                popupOption.show();
             }
         });
     }

@@ -28,12 +28,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Langue de l'application"
-        android:textSize="18dp"
+        android:textSize="18sp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="65dp" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/country_arrays"

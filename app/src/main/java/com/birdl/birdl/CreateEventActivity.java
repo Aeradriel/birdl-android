@@ -6,15 +6,18 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.ViewGroup;
 
-public class EventActivity extends Activity {
+/**
+ * Created by Christophe on 17/07/2015.
+ */
+public class CreateEventActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.event_activity);
+        setContentView(R.layout.create_event_activity);
 
         final ViewGroup actionBarLayout = (ViewGroup)
-                getLayoutInflater().inflate(R.layout.custom_action_bar_event,
+                getLayoutInflater().inflate(R.layout.custom_action_bar_new_event,
                         null);
 
         ActionBar myActionBar = getActionBar();
