@@ -4,7 +4,8 @@
     <string name="Policy_and_privacy">Policy and privacy</string>
     <string name="new_event">New event</string>
     <string name="search_event">Search event</string>
-    <string name="mail">Mail</string>
+    <string name="inbox">Inbox</string>
+    <string name="new_message">New message</string>
     <string name="places_remaining">Places remaining</string>
     <string name="event_type">Event type</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>

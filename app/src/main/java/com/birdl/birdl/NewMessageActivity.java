@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 
 import com.birdl.birdl.R;
 
-public class MailActivity extends Activity{
+public class NewMessageActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mail_activity);
+        setContentView(R.layout.activity_new_message);
 
         final ViewGroup actionBarLayout = (ViewGroup)
-                getLayoutInflater().inflate(R.layout.custom_action_bar_mail,
+                getLayoutInflater().inflate(R.layout.custom_action_bar_new_message,
                         null);
 
         ActionBar myActionBar = getActionBar();

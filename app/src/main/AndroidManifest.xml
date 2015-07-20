@@ -37,9 +37,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".MailActivity" >
+        <activity android:name=".InboxActivity" >
+        <intent-filter>
+            <action android:name="com.birdl.birdl.InboxActivity" />
+
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".NewMessageActivity" >
             <intent-filter>
-                <action android:name="com.birdl.birdl.MailActivity" />
+                <action android:name="com.birdl.birdl.NewMessageActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

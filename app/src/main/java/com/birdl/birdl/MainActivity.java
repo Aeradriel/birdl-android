@@ -31,12 +31,30 @@ public class MainActivity extends Activity {
 
         ImageButton actionBarPicture = (ImageButton) findViewById(R.id.action_bar_user_picture);
 
-        ImageButton actionBarMessage = (ImageButton) findViewById(R.id.action_bar_message);
+        final ImageButton actionBarMessage = (ImageButton) findViewById(R.id.action_bar_message);
         actionBarMessage.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
-                Intent a = new Intent("com.birdl.birdl.MailActivity");
-                startActivity(a);
+                PopupMenu popupMessage = new PopupMenu(MainActivity.this, actionBarMessage);
+
+                MenuInflater inflaterEvent = popupMessage.getMenuInflater();
+                inflaterEvent.inflate(R.menu.menu_message, popupMessage.getMenu());
+
+                popupMessage.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    public boolean onMenuItemClick(MenuItem item) {
+                        String sText = item.getTitle().toString();
+                        if(sText.equals("Inbox")) {
+                            Intent a = new Intent("com.birdl.birdl.InboxActivity");
+                            startActivity(a);
+                        }
+                        else if(sText.equals("New message")) {
+                            Intent a = new Intent("com.birdl.birdl.NewMessageActivity");
+                            startActivity(a);
+                        }
+                        return true;
+                    }
+                });
+                popupMessage.show();
             }
         });
 
