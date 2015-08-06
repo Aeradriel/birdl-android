@@ -5,13 +5,14 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="21" />
+        android:minSdkVersion="22"
+        android:targetSdkVersion="22" />
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/nlogo"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.birdl.birdl.Login"
@@ -43,16 +44,30 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.birdl.birdl.MailActivity" >
+        <activity android:name="com.birdl.birdl.InboxActivity" >
             <intent-filter>
-                <action android:name="com.birdl.birdl.MailActivity" />
+                <action android:name="com.birdl.birdl.InboxActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.birdl.birdl.EventActivity" >
+        <activity android:name="com.birdl.birdl.NewMessageActivity" >
             <intent-filter>
-                <action android:name="com.birdl.birdl.EventActivity" />
+                <action android:name="com.birdl.birdl.NewMessageActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.birdl.birdl.CreateEventActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.CreateEventActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.birdl.birdl.SearchEventActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.SearchEventActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
@@ -69,6 +84,11 @@
         <activity
             android:name="com.birdl.birdl.Confirmation"
             android:label="Une dernière étape..." >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.signupconfirmation" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

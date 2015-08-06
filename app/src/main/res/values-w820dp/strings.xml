@@ -10,4 +10,8 @@
     <string name="sign_up_create">Create</string>
     <string name="sign_up_login">S\'inscrire</string>
     <string name="birdl_text">text logo</string>
+    <string name="gender_select">Default \"M\" switch to select \"F\"</string>
+    <string name="title_logo">title_logo</string>
+    <string name="confirmation_msg">Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird\'L :) !</string>
+    <string name="button_back_home">Retour à l\'accueil</string>
 </resources>

@@ -1,18 +1,96 @@
 package com.birdl.birdl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import org.json.*;
+import com.google.gson.*;
+import java.io.BufferedReader;
+
+import retrofit.Callback;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+import retrofit.http.Body;
+import retrofit.mime.TypedByteArray;
+import retrofit.mime.TypedInput;
 
 
 public class SignUp extends Activity {
+
+    private static EditText email;
+    private static EditText pwd;
+    private static EditText first_name;
+    private static EditText last_name;
+    private static EditText birthdate;
+    private Switch gender;
+    private static Button create;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        SignUp();
+    }
+
+    public void SignUp(){
+         email = (EditText) findViewById(R.id.sign_up_email);
+         pwd = (EditText) findViewById(R.id.sign_up_pwd);
+         first_name = (EditText) findViewById(R.id.sign_up_first_name);
+         last_name = (EditText) findViewById(R.id.sign_up_last_name);
+         birthdate = (EditText) findViewById(R.id.sign_up_date);
+         gender = (Switch) findViewById(R.id.switch1);
+         create = (Button) findViewById(R.id.sign_up_confirm);
+
+        gender.setChecked(false);
+
+        create.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View view) {
+                       Thread i = new Thread(new Runnable() {
+                           @Override
+                           public void run() {
+                               RestAdapter restAdapter = new RestAdapter.Builder()
+                                       .setEndpoint("http://163.5.84.208:3000/")
+                                       .build();
+
+                               RestRegister restRegister = restAdapter.create(RestRegister.class);
+
+                               String query = "{\"email\":\"" + email.getText().toString() + "\""+ ",\"first_name\":\"" + first_name.getText().toString() + "\""+ ",\"last_name\":\"" +
+                                       last_name.getText().toString() + "\""+ ",\"password\":\"" + pwd.getText().toString() + "\""+ ",\"gender\":\"1\",\"birthdate\":\"" +
+                                       birthdate.getText().toString() + "\""+ "}";
+
+                               restRegister.postRegister(query, new Callback<LoginResponse>() {
+                                   @Override
+                                   public void success(LoginResponse loginResponse, Response response) {
+                                       Toast.makeText(SignUp.this, "Created !", Toast.LENGTH_LONG).show();
+                                       Intent intent = new Intent("com.birdl.birdl.signupconfirmation");
+                                       startActivity(intent);
+                                   }
+
+                                   @Override
+                                   public void failure(RetrofitError error) {
+                                       Toast.makeText(SignUp.this, "Failed !", Toast.LENGTH_LONG).show();
+                                   }
+                               });
+                           }
+                       });
+                        i.start();
+                    }
+                }
+        );
+
     }
 
     @Override

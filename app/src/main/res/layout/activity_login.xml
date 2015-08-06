@@ -26,17 +26,9 @@
         android:id="@+id/user_email"
         android:textColor="#A1A1A1"
         android:text="@string/email_in"
-        android:layout_marginTop="52dp"
-        android:layout_below="@+id/imageView"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="75dp"
-        android:id="@+id/imageView"
-        android:contentDescription="@string/birdl_logo_string"
-        android:background="@drawable/logo_birdl"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -44,18 +36,10 @@
         android:layout_height="wrap_content"
         android:text="@string/connect_fr"
         android:id="@+id/connect_button"
-        android:layout_marginTop="31dp"
         android:layout_below="@+id/user_pwd"
-        android:layout_alignStart="@+id/user_pwd" />
+        android:layout_alignStart="@+id/user_pwd"
+        android:layout_marginTop="35dp" />
 
-    <ImageView
-        android:layout_width="175dp"
-        android:layout_height="65dp"
-        android:id="@+id/imageView2"
-        android:background="@drawable/text_logo"
-        android:layout_alignBottom="@+id/imageView"
-        android:layout_alignEnd="@+id/user_email"
-        android:contentDescription="@string/birdl_text" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -65,5 +49,16 @@
         android:id="@+id/sign_up"
         android:layout_alignTop="@+id/connect_button"
         android:layout_toEndOf="@+id/connect_button" />
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView2"
+        android:contentDescription="@string/title_logo"
+        android:src="@drawable/logo_birdl"
+        android:cropToPadding="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

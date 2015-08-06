@@ -10,13 +10,13 @@ import retrofit.client.OkClient;
  */
 
 public class RestClient {
-    private static RestApi REST_CLIENT;
+    private static RestLogin REST_CLIENT;
 
     static {
         setupRestClient();
     }
 
-    public static RestApi get() {
+    public static RestLogin get() {
         return REST_CLIENT;
     }
 
@@ -29,6 +29,6 @@ public class RestClient {
                 .setRequestInterceptor(new SessionRequestInterceptor())
                 .build();
 
-        REST_CLIENT = restAdapter.create(RestApi.class);
+        REST_CLIENT = restAdapter.create(RestLogin.class);
     }
 }

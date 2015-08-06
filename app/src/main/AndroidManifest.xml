@@ -6,10 +6,11 @@
 
     <application
         android:allowBackup="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:icon="@drawable/nlogo">
         <activity
             android:name=".Login"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -77,6 +78,11 @@
         <activity
             android:name=".Confirmation"
             android:label="Une dernière étape..." >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.signupconfirmation" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

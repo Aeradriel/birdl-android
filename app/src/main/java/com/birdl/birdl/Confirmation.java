@@ -1,18 +1,23 @@
 package com.birdl.birdl;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class Confirmation extends Activity {
+    private static Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
+        ReturnToLoginMenu();
     }
 
     @Override
@@ -21,6 +26,21 @@ public class Confirmation extends Activity {
         getMenuInflater().inflate(R.menu.menu_confirmation, menu);
         return true;
     }
+
+    public void ReturnToLoginMenu(){
+        home = (Button) findViewById(R.id.login_back);
+
+        home.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View t) {
+                        Intent intent = new Intent("android.intent.action.MAIN");
+                        startActivity(intent);
+                    }
+                }
+        );
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

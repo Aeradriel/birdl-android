@@ -8,6 +8,19 @@
         <item>Espagnol</item>
         <item>Italy</item>
     </string-array>
+    <string-array name="event_type">
+        <item>Non renseigné</item>
+        <item>Face à Face</item>
+        <item>Chat en ligne</item>
+        <item>Sortie touristique</item>
+        <item>Evénement de groupe</item>
+    </string-array>
+    <string-array name="event_type_create">
+        <item>Face à Face</item>
+        <item>Chat en ligne</item>
+        <item>Sortie touristique</item>
+        <item>Evénement de groupe</item>
+    </string-array>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>
     <attr format="reference" name="drawerArrowStyle"/>
@@ -199,7 +212,6 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="Event">Event</string>
     <string name="Policy_and_privacy">Policy and privacy</string>
     <string name="Privacy_policy">Privacy policy</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
@@ -230,18 +242,28 @@
     <string name="birdl_logo_bird">birdl_logo_bird</string>
     <string name="birdl_logo_string">Birdl_logo_string</string>
     <string name="birdl_text">text logo</string>
+    <string name="button_back_home">Retour à l\'accueil</string>
+    <string name="confirmation_msg">Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird\'L :) !</string>
     <string name="connect_fr">Se connecter</string>
     <string name="country_prompt">Choisir</string>
     <string name="email">E-mail</string>
     <string name="email_in">E-mail</string>
+    <string name="event_prompt">Event type</string>
+    <string name="event_type">Event type</string>
+    <string name="gender_select">Default \"M\" switch to select \"F\"</string>
     <string name="hello_world">Hello world!</string>
     <string name="identify_fr">S\'identifier</string>
+    <string name="inbox">Inbox</string>
     <string name="logout_fr">Se déconnecter</string>
+    <string name="new_event">New event</string>
+    <string name="new_message">New message</string>
     <string name="password_fr">Mot de passe</string>
     <string name="password_in">Mot de passe</string>
+    <string name="places_remaining">Places remaining</string>
     <string name="save_text_fr">Sauvegarder E-mail/Mot de passe</string>
     <string name="savebox">New CheckBox</string>
     <string name="savebox_in">Garder ma session active</string>
+    <string name="search_event">Search event</string>
     <string name="sign_up_create">Create</string>
     <string name="sign_up_date">\"YYYY/MM/DD\"</string>
     <string name="sign_up_email">E-mail</string>
@@ -260,6 +282,7 @@
     <string name="title_activity_confirmation">Confirmation</string>
     <string name="title_activity_sign_up">SignUp</string>
     <string name="title_activity_user">User</string>
+    <string name="title_logo">title_logo</string>
     <string name="welcome_fr">Bienvenue</string>
     <!-- From: file:/C:/Users/Serkan/StudioProjects/birdl-android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/res/values/values.xml -->
     <eat-comment/>

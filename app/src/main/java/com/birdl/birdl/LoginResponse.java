@@ -16,11 +16,11 @@ public class LoginResponse {
     public String password;
     public String error;
     public String birthdate;
-    public UserCurrent user;
+    public Register user;
 
     public LoginResponse(){}
 
-    public LoginResponse(String error, UserCurrent user){
+    public LoginResponse(String error, Register user){
         this.error = error;
         this.user = user;
     }
@@ -89,11 +89,11 @@ public class LoginResponse {
         this.error = error;
     }
 
-    public UserCurrent getUserCurrent() {
+    public Register getUserCurrent() {
         return user;
     }
 
-    public void setUserCurrent(UserCurrent resp) {
+    public void setUserCurrent(Register resp) {
         this.user = user;
     }
 

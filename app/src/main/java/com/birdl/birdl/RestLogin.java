@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Created by Serkan on 12/07/2015.
  */
 
-public interface RestApi {
+public interface RestLogin {
     @FormUrlEncoded
     @POST("/api/login")
     void postLogin(@Field("email") String username, @Field("password") String password, Callback<LoginResponse> callback);

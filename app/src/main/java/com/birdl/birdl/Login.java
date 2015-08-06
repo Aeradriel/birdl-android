@@ -57,7 +57,7 @@ public class Login extends Activity {
                                         .setEndpoint("http://163.5.84.208:3000/")
                                         .build();
 
-                                RestApi api = restAdapter.create(RestApi.class);
+                                RestLogin api = restAdapter.create(RestLogin.class);
                                 api.postLogin(username.getText().toString(), password.getText().toString(), new Callback<LoginResponse>() {
                                     @Override
                                     public void success(LoginResponse loginResponse, Response response) {

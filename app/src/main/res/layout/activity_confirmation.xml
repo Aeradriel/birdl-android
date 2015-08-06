@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird&apos;L :) !"
+        android:text="@string/confirmation_msg"
         android:id="@+id/textView"
         android:layout_marginTop="81dp"
         android:layout_alignParentTop="true"
@@ -19,7 +19,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Retour à l&apos;accueil"
+        android:text="@string/button_back_home"
         android:id="@+id/login_back"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"

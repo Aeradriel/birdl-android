@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:contentDescription="@string/birdl_logo_string"
-        android:background="@drawable/text_logo"
+        android:background="@drawable/logo_birdl"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
