@@ -38,6 +38,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".SetProfilActivity" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.SetProfilActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".InboxActivity" >
         <intent-filter>
             <action android:name="com.birdl.birdl.InboxActivity" />

@@ -29,9 +29,16 @@ public class MainActivity extends Activity {
         myActionBar.setDisplayShowCustomEnabled(true);
         myActionBar.setCustomView(actionBarLayout);
 
-        ImageButton actionBarPicture = (ImageButton) findViewById(R.id.action_bar_user_picture);
+        final ImageButton actionBarPicture = (ImageButton) findViewById(R.id.action_bar_user_picture);
+        actionBarPicture.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v) {
 
-        final ImageButton actionBarMessage = (ImageButton) findViewById(R.id.action_bar_message);
+            Intent a = new Intent("com.birdl.birdl.SetProfilActivity");
+            startActivity(a);
+        }});
+
+            final ImageButton actionBarMessage = (ImageButton) findViewById(R.id.action_bar_message);
         actionBarMessage.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View v) {
