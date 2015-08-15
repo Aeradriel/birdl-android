@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
 
     @Override
     public void onDrawerItemSelected(View view, int position) {
+        displayView(position);
     }
 
     private void displayView(int position) {
