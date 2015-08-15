@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.birdl.birdl.R;
 
+import activity.MainActivity;
+
 public class SettingsActivity extends Activity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,16 +17,6 @@ public class SettingsActivity extends Activity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
 
-        final ViewGroup actionBarLayout = (ViewGroup)
-                getLayoutInflater().inflate(R.layout.custom_action_bar_settings,
-                        null);
-
-        ActionBar myActionBar = getActionBar();
-        myActionBar.setDisplayShowHomeEnabled(false);
-        myActionBar.setDisplayHomeAsUpEnabled(true);
-        myActionBar.setDisplayShowTitleEnabled(false);
-        myActionBar.setDisplayShowCustomEnabled(true);
-        myActionBar.setCustomView(actionBarLayout);
     }
     public boolean onOptionsItemSelected(MenuItem item){
         Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);

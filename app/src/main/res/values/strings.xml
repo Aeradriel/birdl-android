@@ -1,16 +1,30 @@
 <resources>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="Policy_and_privacy">Policy and privacy</string>
     <string name="new_event">New event</string>
-    <string name="search_event">Search event</string>
-    <string name="inbox">Inbox</string>
-    <string name="new_message">New message</string>
     <string name="places_remaining">Places remaining</string>
     <string name="event_type">Event type</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
     <string name="Use_of_BIRDL">Use of BIRDL</string>
     <string name="event_prompt">Event type</string>
+    <string name="user_name">User name</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+    <string name="new_message">Create message</string>
+    <string name="inbox">Inbox</string>
+    <string name="create_event">Create event</string>
+    <string name="search_event">Search event</string>
+    <string-array name="nav_drawer_labels">
+        <item>@string/new_message</item>
+        <item>@string/inbox</item>
+        <item>@string/create_event</item>
+        <item>@string/search_event</item>
+    </string-array>
+    <string name="title_messages">Messages</string>
+    <string name="title_friends">Friends</string>
+    <string name="title_home">Home</string>
     <string-array name="event_type_create">
         <item>Face à Face</item>
         <item>Chat en ligne</item>
@@ -66,4 +80,7 @@
     <string name="title_logo">title_logo</string>
     <string name="confirmation_msg">Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird\'L :) !</string>
     <string name="button_back_home">Retour à l\'accueil</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

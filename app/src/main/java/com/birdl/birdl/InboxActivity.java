@@ -1,34 +1,41 @@
 package com.birdl.birdl;
-import android.app.ActionBar;
 import android.app.Activity;
+import android.support.v4.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.birdl.birdl.R;
 
-public class InboxActivity extends Activity{
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        // TODO Auto-generated method stub
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inbox);
+import activity.MainActivity;
 
-        final ViewGroup actionBarLayout = (ViewGroup)
-                getLayoutInflater().inflate(R.layout.custom_action_bar_inbox,
-                        null);
-
-        ActionBar myActionBar = getActionBar();
-        myActionBar.setDisplayShowHomeEnabled(false);
-        myActionBar.setDisplayHomeAsUpEnabled(true);
-        myActionBar.setDisplayShowTitleEnabled(false);
-        myActionBar.setDisplayShowCustomEnabled(true);
-        myActionBar.setCustomView(actionBarLayout);
+public class InboxActivity extends Fragment {
+    public InboxActivity() {
     }
-    public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), MainActivity.class);
-        startActivityForResult(myIntent, 0);
-        return true;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.activity_inbox, container, false);
+
+        return rootView;
+    }
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
     }
 }
