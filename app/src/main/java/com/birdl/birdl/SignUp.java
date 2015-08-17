@@ -9,8 +9,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.*;
@@ -52,40 +54,54 @@ public class SignUp extends Activity {
          gender = (Switch) findViewById(R.id.switch1);
          create = (Button) findViewById(R.id.sign_up_confirm);
 
-        gender.setChecked(false);
+        gender.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    Toast.makeText(SignUp.this, "Female selected", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SignUp.this, "Male selected", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         create.setOnClickListener(
-                new View.OnClickListener(){
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                       Thread i = new Thread(new Runnable() {
-                           @Override
-                           public void run() {
-                               RestAdapter restAdapter = new RestAdapter.Builder()
-                                       .setEndpoint("http://163.5.84.208:3000/")
-                                       .build();
+                        Thread i = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                RestAdapter restAdapter = new RestAdapter.Builder()
+                                        .setEndpoint("http://163.5.84.208:3000/")
+                                        .build();
 
-                               RestRegister restRegister = restAdapter.create(RestRegister.class);
+                                RestRegister restRegister = restAdapter.create(RestRegister.class);
 
-                               String query = "{\"email\":\"" + email.getText().toString() + "\""+ ",\"first_name\":\"" + first_name.getText().toString() + "\""+ ",\"last_name\":\"" +
-                                       last_name.getText().toString() + "\""+ ",\"password\":\"" + pwd.getText().toString() + "\""+ ",\"gender\":\"1\",\"birthdate\":\"" +
-                                       birthdate.getText().toString() + "\""+ "}";
+                                String res = "";
+                                if (gender.isChecked()){
+                                    res = "0";
+                                } else res = "1";
 
-                               restRegister.postRegister(query, new Callback<LoginResponse>() {
-                                   @Override
-                                   public void success(LoginResponse loginResponse, Response response) {
-                                       Toast.makeText(SignUp.this, "Created !", Toast.LENGTH_LONG).show();
-                                       Intent intent = new Intent("com.birdl.birdl.signupconfirmation");
-                                       startActivity(intent);
-                                   }
+                                String query = "{\"email\":\"" + email.getText().toString() + "\"" + ",\"first_name\":\"" + first_name.getText().toString() + "\"" + ",\"last_name\":\"" +
+                                        last_name.getText().toString() + "\"" + ",\"password\":\"" + pwd.getText().toString() + "\"" + ",\"gender\":\"" + res + "\"" + ",\"birthdate\":\"" +
+                                        birthdate.getText().toString() + "\"" + "}";
 
-                                   @Override
-                                   public void failure(RetrofitError error) {
-                                       Toast.makeText(SignUp.this, "Failed !", Toast.LENGTH_LONG).show();
-                                   }
-                               });
-                           }
-                       });
+                                restRegister.postRegister(query, new Callback<LoginResponse>() {
+                                    @Override
+                                    public void success(LoginResponse loginResponse, Response response) {
+                                        Toast.makeText(SignUp.this, "Created !", Toast.LENGTH_LONG).show();
+                                        Intent intent = new Intent("com.birdl.birdl.signupconfirmation");
+                                        startActivity(intent);
+                                    }
+
+                                    @Override
+                                    public void failure(RetrofitError error) {
+                                        Toast.makeText(SignUp.this, "Failed !", Toast.LENGTH_LONG).show();
+                                    }
+                                });
+                            }
+                        });
                         i.start();
                     }
                 }

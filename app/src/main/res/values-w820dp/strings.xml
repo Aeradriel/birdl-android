@@ -14,4 +14,5 @@
     <string name="title_logo">title_logo</string>
     <string name="confirmation_msg">Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird\'L :) !</string>
     <string name="button_back_home">Retour à l\'accueil</string>
+    <string name="email_2">email</string>
 </resources>
