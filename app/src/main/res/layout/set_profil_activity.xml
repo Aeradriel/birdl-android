@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D4DCDB"
+    android:background="@android:color/white"
     android:weightSum="1">
 
     <LinearLayout
@@ -16,44 +16,46 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Profil Name"
-            android:textSize="23sp"
-            android:id="@+id/event_name" />
+            android:textSize="21sp"
+            android:id="@+id/profilname" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/event_name_field"
+            android:id="@+id/profilNameField"
             android:layout_weight="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40sp"
             android:text="Age"
-            android:textSize="23sp"
+            android:textSize="21sp"
             android:id="@+id/event_name" />
-        <NumberPicker
+
+        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70sp"
-            android:id="@+id/numberPicker" />
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/editText3"
+            android:layout_weight="1" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Country"
-            android:textSize="23sp"
+            android:textSize="21sp"
             android:id="@+id/event_name" />
         <Spinner
             android:id="@+id/spinner_language"
@@ -67,30 +69,38 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="35dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Picture"
-            android:textSize="23sp"
+            android:textSize="21sp"
+            android:layout_marginTop="5sp"
             android:id="@+id/event_name" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:layout_marginLeft="40sp"
+            android:layout_marginLeft="30sp"
             android:text="Browse"
-            android:id="@+id/button3"
+            android:id="@+id/buttonBrowsePic"
             android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_profile"
+            android:id="@+id/setImageProfil" />
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:layout_marginTop="40sp"
         android:text="Submit"
-        android:id="@+id/button3"
+        android:id="@+id/buttonSubmit"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

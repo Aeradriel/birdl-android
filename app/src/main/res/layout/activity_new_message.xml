@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:weightSum="1"
+    android:background="@android:color/white">
 
     <EditText
         android:layout_width="match_parent"
@@ -27,8 +28,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Envoyer"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
         android:id="@+id/button"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.05"
-        android:background="#DCAA8D"/>
+        android:background="@color/colorPrimary"/>
 </LinearLayout>

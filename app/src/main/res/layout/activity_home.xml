@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="info.androidhive.materialdesign.activity.HomeFragment">
+    tools:context="info.androidhive.materialdesign.activity.HomeFragment"
+    android:background="@android:color/white">
 
     <TableLayout
         android:id="@+id/table"
@@ -12,7 +13,7 @@
         android:layout_width="fill_parent"
         android:layout_marginTop="100dp"
         android:gravity="center_horizontal"
-        android:background="#DCAA8D">
+        android:background="@color/colorPrimary">
         <TableRow
             android:id="@+id/table_hall_of_fame"
             android:layout_width="match_parent"
@@ -22,7 +23,7 @@
                 android:textColor="#000"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
-                android:background="#DCAA8D"
+                android:background="@color/colorPrimary"
                 android:layout_margin="1dip"
                 android:id="@+id/table_title"
                 android:layout_weight="0.3"
