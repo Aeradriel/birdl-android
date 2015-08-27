@@ -52,7 +52,7 @@
         android:text="SUBMIT"
         android:textSize="20dp"
         android:textColor="@android:color/white"
-        android:id="@+id/valide_search"
+        android:id="@+id/submit_setting"
         android:background="@color/colorPrimary"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60sp"/>

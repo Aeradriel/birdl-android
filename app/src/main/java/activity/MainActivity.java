@@ -18,6 +18,7 @@ import android.widget.TextView;
 import com.birdl.birdl.CreateEventActivity;
 import com.birdl.birdl.HomeActivity;
 import com.birdl.birdl.InboxActivity;
+import com.birdl.birdl.Login;
 import com.birdl.birdl.NewMessageActivity;
 import com.birdl.birdl.R;
 import com.birdl.birdl.SearchEventActivity;
@@ -121,6 +122,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             case 4:
                 fragment = new SearchEventActivity();
                 title = getString(R.string.search_event);
+                break;
+            case 5:
+                Intent intent = new Intent(this, Login.class);
+                startActivity(intent);
                 break;
             default:
                 break;

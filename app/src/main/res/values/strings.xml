@@ -16,12 +16,14 @@
     <string name="inbox">Inbox</string>
     <string name="create_event">Create event</string>
     <string name="search_event">Search event</string>
+    <string name="disconnect">Disconnect</string>
     <string-array name="nav_drawer_labels">
         <item>@string/title_home</item>
         <item>@string/new_message</item>
         <item>@string/inbox</item>
         <item>@string/create_event</item>
         <item>@string/search_event</item>
+        <item>@string/disconnect</item>
     </string-array>
     <string name="title_messages">Messages</string>
     <string name="title_friends">Friends</string>
