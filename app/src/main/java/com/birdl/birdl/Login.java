@@ -8,20 +8,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Toast;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+
 import java.util.List;
+
+import activity.MainActivity;
+import model.UserInformation;
+import model.UserInformationStatic;
+import model.UserResponse;
+import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.Callback;
 import retrofit.RetrofitError;
-import retrofit.RestAdapter;
+import retrofit.android.AndroidLog;
+import retrofit.client.Header;
 import retrofit.client.Response;
-import retrofit.http.GET;
-import retrofit.http.Path;
-import retrofit.http.Query;
 
 
 public class Login extends Activity {
@@ -29,6 +30,8 @@ public class Login extends Activity {
     private static EditText password;
     private static Button login;
     private static Button sign_up;
+    static int i = 0;
+    static UserInformationStatic informationStatic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +56,7 @@ public class Login extends Activity {
                         Thread fetch = new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                RestAdapter restAdapter = new RestAdapter.Builder()
+                                final RestAdapter restAdapter = new RestAdapter.Builder()
                                         .setEndpoint("http://163.5.84.208:3000/")
                                         .build();
 
@@ -61,9 +64,43 @@ public class Login extends Activity {
                                 api.postLogin(username.getText().toString(), password.getText().toString(), new Callback<LoginResponse>() {
                                     @Override
                                     public void success(LoginResponse loginResponse, Response response) {
-                                        Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent("com.birdl.birdl.action.menu");
-                                        startActivity(intent);
+                                        List<Header> test = response.getHeaders();
+                                        SessionInformation.ChangeAccessToken(test.get(2).toString());
+
+
+                                        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+                                            public void intercept(RequestFacade request) {
+                                                request.addHeader("ACCESS-TOKEN", SessionInformation.AccessToken);
+                                            }
+                                        };
+
+                                        RestAdapter userInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                                .setRequestInterceptor(requestInterceptor)
+                                                .setLogLevel(RestAdapter.LogLevel.FULL)
+                                                .setLog(new AndroidLog("log retrofit"))
+                                                .build();
+                                        RestUserInformation getUserInfo = userInformation.create(RestUserInformation.class);
+                                        getUserInfo.getInfo(new Callback<UserResponse>() {
+                                            @Override
+                                            public void success(UserResponse userResponse, Response response2) {
+                                                informationStatic = new UserInformationStatic(
+                                                        userResponse.user.getId(),
+                                                        userResponse.user.getEmail(),
+                                                        userResponse.user.getFirst_name(),
+                                                        userResponse.user.getLast_name(),
+                                                        userResponse.user.getBirthdate(),
+                                                        userResponse.user.getGender());
+
+                                                Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
+                                                Intent intent = new Intent("com.birdl.birdl.action.menu");
+                                                startActivity(intent);
+                                            }
+
+                                            @Override
+                                            public void failure(RetrofitError error) {
+                                                Toast.makeText(Login.this, "bad request", Toast.LENGTH_LONG).show();
+                                            }
+                                        });
                                     }
 
                                     @Override

@@ -27,16 +27,31 @@ public class SetProfilActivity extends Activity {
     private ImageView profilPic;
     private Button pickImage;
     private final int SELECT_PHOTO = 1;
-    public static TextView usernameModif;
-    private EditText usernameField = null;
+    public static String FirstNameModif;
+    public static String LastNameModif;
+    public static String BirthdateModif;
+    public static String EmailModif;
+    private EditText FirstNameField = null;
+    private EditText LastNameField = null;
+    private EditText BirthdateField = null;
+    private EditText EmailField = null;
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_profil_activity);
 
-        usernameField = (EditText) findViewById(R.id.profilNameField);
-        usernameField.setText(usernameModif.getText().toString());
+        FirstNameField = (EditText) findViewById(R.id.FirstNameField);
+        FirstNameField.setText(FirstNameModif);
+
+        LastNameField = (EditText) findViewById(R.id.LastNameField);
+        LastNameField.setText(LastNameModif);
+
+        BirthdateField = (EditText) findViewById(R.id.BirthdateField);
+        BirthdateField.setText(BirthdateModif);
+
+        EmailField = (EditText) findViewById(R.id.EmailField);
+        EmailField.setText(EmailModif);
 
         profilPic = (ImageView) findViewById(R.id.setImageProfil);
         pickImage = (Button) findViewById(R.id.buttonBrowsePic);
@@ -52,7 +67,7 @@ public class SetProfilActivity extends Activity {
         ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.usernameModif = usernameField.getText().toString();
+                MainActivity.FirstNameModif = FirstNameField.getText().toString();
                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                 startActivity(intent);
             }
