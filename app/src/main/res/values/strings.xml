@@ -88,4 +88,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="email_2">email</string>
     <string name="pwd_2">password</string>
+    <string name="gender_src">Genre (H/F)</string>
+    <string name="land_butn">Pays</string>
 </resources>

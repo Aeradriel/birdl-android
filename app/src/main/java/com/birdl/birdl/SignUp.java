@@ -35,6 +35,7 @@ public class SignUp extends Activity {
     private static EditText first_name;
     private static EditText last_name;
     private static EditText birthdate;
+    private Button country;
     private Switch gender;
     private static Button create;
 
@@ -53,6 +54,7 @@ public class SignUp extends Activity {
          birthdate = (EditText) findViewById(R.id.sign_up_date);
          gender = (Switch) findViewById(R.id.switch1);
          create = (Button) findViewById(R.id.sign_up_confirm);
+         country = (Button) findViewById(R.id.button_land);
 
         gender.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -64,6 +66,8 @@ public class SignUp extends Activity {
                 }
             }
         });
+
+
 
         create.setOnClickListener(
                 new View.OnClickListener() {

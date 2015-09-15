@@ -36,7 +36,8 @@
         android:contentDescription="@string/birdl_logo_string"
         android:background="@drawable/logo_birdl"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
