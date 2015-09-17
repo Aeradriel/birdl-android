@@ -22,7 +22,12 @@ import com.birdl.birdl.Login;
 import com.birdl.birdl.NewMessageActivity;
 import com.birdl.birdl.R;
 import com.birdl.birdl.SearchEventActivity;
+import com.birdl.birdl.SessionInformation;
 import com.birdl.birdl.SetProfilActivity;
+
+import model.UserInformation;
+import model.UserInformationStatic;
+import model.UserResponse;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener{
 
@@ -30,8 +35,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     private FragmentDrawer drawerFragment;
     public static ImageView setProfil;
     public static Bitmap defaultImage = null;
-    public static TextView username;
-    public static String usernameModif = null;
+    public static TextView FirstName;
+    public static String FirstNameModif = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +53,27 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
-        username = (TextView) findViewById(R.id.usernameProfil);
-        if (usernameModif != null) {
-            username.setText(usernameModif);
+        //Firstname
+        FirstName = (TextView) findViewById(R.id.usernameProfil);
+        if (FirstNameModif != null) {
+            FirstName.setText(FirstNameModif);
+            SetProfilActivity.FirstNameModif = FirstNameModif;
         }
-        SetProfilActivity.usernameModif = username;
+        else {
+            FirstName.setText(UserInformationStatic.getFirst_name());
+            SetProfilActivity.FirstNameModif = UserInformationStatic.getFirst_name();
+        }
 
+        //lastName
+        SetProfilActivity.LastNameModif = UserInformationStatic.getLast_name();
+
+        //Email
+        SetProfilActivity.BirthdateModif = UserInformationStatic.getBirthdate();
+
+        //Email
+        SetProfilActivity.EmailModif = UserInformationStatic.getEmail();
+
+        //profil picture
         setProfil = (ImageView) findViewById(R.id.imageProfil);
         if (defaultImage != null) {
             setProfil.setImageBitmap(defaultImage);
