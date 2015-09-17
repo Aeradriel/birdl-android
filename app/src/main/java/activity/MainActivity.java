@@ -15,19 +15,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.birdl.birdl.CreateEventActivity;
 import com.birdl.birdl.HomeActivity;
 import com.birdl.birdl.InboxActivity;
 import com.birdl.birdl.Login;
 import com.birdl.birdl.NewMessageActivity;
 import com.birdl.birdl.R;
-import com.birdl.birdl.SearchEventActivity;
-import com.birdl.birdl.SessionInformation;
 import com.birdl.birdl.SetProfilActivity;
 
-import model.UserInformation;
 import model.UserInformationStatic;
-import model.UserResponse;
+import com.birdl.birdl.SlidingEventLayout;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener{
 
@@ -136,14 +132,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 title = getString(R.string.inbox);
                 break;
             case 3:
-                fragment = new CreateEventActivity();
-                title = getString(R.string.create_event);
+                Intent intent2 = new Intent(this, SlidingEventLayout.class);
+                startActivity(intent2);
                 break;
             case 4:
-                fragment = new SearchEventActivity();
-                title = getString(R.string.search_event);
-                break;
-            case 5:
                 Intent intent = new Intent(this, Login.class);
                 startActivity(intent);
                 break;

@@ -61,6 +61,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".SlidingEventLayout" >
+            <intent-filter>
+                <action android:name="com.birdl.birdl.SlidingEventLayout" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".CreateEventActivity" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.CreateEventActivity" />
