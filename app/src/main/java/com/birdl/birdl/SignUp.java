@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.accessibility.AccessibilityManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -38,6 +39,7 @@ public class SignUp extends Activity {
     private Button country;
     private Switch gender;
     private static Button create;
+    private String countryCode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +48,18 @@ public class SignUp extends Activity {
         SignUp();
     }
 
-    public void SignUp(){
-         email = (EditText) findViewById(R.id.sign_up_email);
-         pwd = (EditText) findViewById(R.id.sign_up_pwd);
-         first_name = (EditText) findViewById(R.id.sign_up_first_name);
-         last_name = (EditText) findViewById(R.id.sign_up_last_name);
-         birthdate = (EditText) findViewById(R.id.sign_up_date);
-         gender = (Switch) findViewById(R.id.switch1);
-         create = (Button) findViewById(R.id.sign_up_confirm);
-         country = (Button) findViewById(R.id.button_land);
+    public void SignUp() {
+        email = (EditText) findViewById(R.id.sign_up_email);
+        pwd = (EditText) findViewById(R.id.sign_up_pwd);
+        first_name = (EditText) findViewById(R.id.sign_up_first_name);
+        last_name = (EditText) findViewById(R.id.sign_up_last_name);
+        birthdate = (EditText) findViewById(R.id.sign_up_date);
+        gender = (Switch) findViewById(R.id.switch1);
+        create = (Button) findViewById(R.id.sign_up_confirm);
+        country = (Button) findViewById(R.id.button_land);
+
+        final Intent intentg = new Intent(this, CountrycodeActivity.class);
+
 
         gender.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -67,7 +72,12 @@ public class SignUp extends Activity {
             }
         });
 
-
+        country.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(intentg, 1);
+            }
+        });
 
         create.setOnClickListener(
                 new View.OnClickListener() {
@@ -83,13 +93,13 @@ public class SignUp extends Activity {
                                 RestRegister restRegister = restAdapter.create(RestRegister.class);
 
                                 String res = "";
-                                if (gender.isChecked()){
+                                if (gender.isChecked()) {
                                     res = "0";
                                 } else res = "1";
 
-                                String query = "{\"email\":\"" + email.getText().toString() + "\"" + ",\"first_name\":\"" + first_name.getText().toString() + "\"" + ",\"last_name\":\"" +
+                                final String query = "{\"email\":\"" + email.getText().toString() + "\"" + ",\"first_name\":\"" + first_name.getText().toString() + "\"" + ",\"last_name\":\"" +
                                         last_name.getText().toString() + "\"" + ",\"password\":\"" + pwd.getText().toString() + "\"" + ",\"gender\":\"" + res + "\"" + ",\"birthdate\":\"" +
-                                        birthdate.getText().toString() + "\"" + "}";
+                                        birthdate.getText().toString() + "\"" + ",\"country_id\":\"" + countryCode + "\"" + "}";
 
                                 restRegister.postRegister(query, new Callback<LoginResponse>() {
                                     @Override
@@ -102,6 +112,7 @@ public class SignUp extends Activity {
                                     @Override
                                     public void failure(RetrofitError error) {
                                         Toast.makeText(SignUp.this, "Failed !", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignUp.this, query, Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }
@@ -111,6 +122,15 @@ public class SignUp extends Activity {
                 }
         );
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
+            countryCode = data.getStringExtra(CountrycodeActivity.RESULT_COUNTRYCODE);
+            Toast.makeText(this, "Vous avez choisi: " + countryCode, Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

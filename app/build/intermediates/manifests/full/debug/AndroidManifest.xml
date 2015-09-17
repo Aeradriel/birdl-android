@@ -100,6 +100,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.birdl.birdl.CountrycodeActivity"
+            android:label="Select your country"
+            android:noHistory="true"
+            android:theme="@android:style/Theme.Holo.Light.Dialog" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,6 +8,27 @@
         <item>Espagnol</item>
         <item>Italy</item>
     </string-array>
+    <string-array name="country_codes">
+        <item>1</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>59</item>
+    </string-array>
+    <string-array name="country_flags">
+        <item>@drawable/flag_us</item>
+        <item>@drawable/flag_dk</item>
+        <item>@drawable/flag_se</item>
+        <item>@drawable/flag_no</item>
+        <item>@drawable/flag_fr</item>
+    </string-array>
+    <string-array name="country_names">
+        <item>United States"</item>
+        <item>Denmark</item>
+        <item>Sweden</item>
+        <item>Norway</item>
+        <item>France</item>
+    </string-array>
     <string-array name="event_type">
         <item>Non renseigné</item>
         <item>Face à Face</item>

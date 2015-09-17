@@ -13,7 +13,7 @@
         android:id="@+id/sign_up_email"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/sign_up_email" />
+        android:hint="Adresse mail" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -21,29 +21,29 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/sign_up_pwd"
-        android:text="@string/sign_up_ppwd"
         android:layout_below="@+id/sign_up_email"
         android:layout_alignStart="@+id/sign_up_email"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:hint="mot de passe" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sign_up_first_name"
         android:inputType="text"
-        android:text="@string/sign_up_first_name"
         android:layout_marginTop="52dp"
         android:layout_below="@+id/button_land"
-        android:layout_alignStart="@+id/button_land" />
+        android:layout_alignStart="@+id/button_land"
+        android:hint="Prénom" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/sign_up_last_name"
         android:inputType="text"
-        android:text="@string/sign_up_last_name"
         android:layout_alignTop="@+id/sign_up_first_name"
-        android:layout_alignEnd="@+id/switch1" />
+        android:layout_alignEnd="@+id/switch1"
+        android:hint="Nom de famille" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -51,10 +51,10 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/sign_up_date"
-        android:text="@string/sign_up_date"
-        android:layout_alignBaseline="@+id/sign_up_confirm"
-        android:layout_alignBottom="@+id/sign_up_confirm"
-        android:layout_alignStart="@+id/sign_up_first_name" />
+        android:layout_above="@+id/sign_up_confirm"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="43dp"
+        android:hint="AAAA/MM/JJ" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
