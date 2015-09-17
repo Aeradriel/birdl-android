@@ -34,7 +34,7 @@ public class Confirmation extends Activity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View t) {
-                        Intent intent = new Intent("android.intent.action.MAIN");
+                        Intent intent = new Intent(Confirmation.this, Login.class);
                         startActivity(intent);
                     }
                 }

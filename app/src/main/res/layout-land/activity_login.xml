@@ -13,9 +13,11 @@
         android:ems="10"
         android:id="@+id/user_pwd"
         android:textColor="#A1A1A1"
+        android:hint="Mot de passe"
+        android:paddingLeft="25dp"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
-        android:text="@string/pwd_2" />
+        android:layout_marginEnd="39dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -24,20 +26,20 @@
         android:ems="10"
         android:id="@+id/user_email"
         android:textColor="#A1A1A1"
-        android:layout_centerVertical="true"
-        android:layout_alignParentStart="true"
         android:autoText="false"
-        android:text="@string/email_2" />
+        android:hint="Adresse mail"
+        android:layout_alignTop="@+id/user_pwd"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp" />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="350dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView"
         android:contentDescription="@string/birdl_logo_string"
         android:background="@drawable/logo_birdl"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -46,7 +48,8 @@
         android:text="@string/connect_fr"
         android:id="@+id/connect_button"
         android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/button4" />
+        android:layout_alignStart="@+id/user_email"
+        android:layout_marginStart="27dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

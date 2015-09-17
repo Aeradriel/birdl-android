@@ -14,9 +14,9 @@
         android:ems="10"
         android:id="@+id/user_pwd"
         android:textColor="#A1A1A1"
-        android:text="@string/password_in"
         android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/user_email" />
+        android:layout_alignStart="@+id/user_email"
+        android:hint="Mot de passe" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -25,10 +25,10 @@
         android:ems="10"
         android:id="@+id/user_email"
         android:textColor="#A1A1A1"
-        android:text="@string/email_in"
-        android:layout_below="@+id/imageView2"
+        android:hint="Adresse mail"
+        android:layout_above="@+id/user_pwd"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp" />
+        android:layout_marginBottom="44dp" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -59,6 +59,7 @@
         android:cropToPadding="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp"
         android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
