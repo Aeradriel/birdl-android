@@ -13,6 +13,7 @@ public class UserInformation{
     String last_name;
     String birthdate;
     int gender;
+    String access_token;
     //String country;
 
     public int getId() {
@@ -62,4 +63,8 @@ public class UserInformation{
     public void setGender(int gender) {
         this.gender = gender;
     }
+
+    public String getAccess_token() {return access_token;}
+
+    public void setAccess_token(String access_token){this.access_token = access_token;}
 }

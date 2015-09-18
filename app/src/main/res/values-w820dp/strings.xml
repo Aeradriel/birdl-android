@@ -15,4 +15,7 @@
     <string name="confirmation_msg">Un e-mail de confirmation vous a été envoyé pour activer votre compte Bird\'L :) !</string>
     <string name="button_back_home">Retour à l\'accueil</string>
     <string name="email_2">email</string>
+    <string name="register_session">Enregistrer sa session</string>
+    <string name="email_usr">Adresse mail</string>
+    <string name="pass_usr">Mot de passe</string>
 </resources>

@@ -90,6 +90,9 @@
     <string name="pwd_2">password</string>
     <string name="gender_src">Genre (H/F)</string>
     <string name="land_butn">Pays</string>
+    <string name="register_session">Enregistrer sa session</string>
+    <string name="email_usr">Adresse mail</string>
+    <string name="pass_usr">Mot de passe</string>
 
     <string-array name="country_names">
         <item>United States"</item>

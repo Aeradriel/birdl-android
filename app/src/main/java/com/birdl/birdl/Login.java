@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -32,6 +33,8 @@ public class Login extends Activity {
     private static Button sign_up;
     static int i = 0;
     static UserInformationStatic informationStatic;
+    private CheckBox memo;
+    String access_token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class Login extends Activity {
         login = (Button) findViewById(R.id.connect_button);
         sign_up = (Button) findViewById(R.id.sign_up);
         final RetrofitError error;
+
+
+
 
         login.setOnClickListener(
                 new View.OnClickListener() {
@@ -71,10 +77,11 @@ public class Login extends Activity {
                                         RequestInterceptor requestInterceptor = new RequestInterceptor() {
                                             public void intercept(RequestFacade request) {
                                                 request.addHeader("ACCESS-TOKEN", SessionInformation.AccessToken);
+                                                access_token = SessionInformation.AccessToken;
                                             }
                                         };
 
-                                        RestAdapter userInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                        final RestAdapter userInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
                                                 .setRequestInterceptor(requestInterceptor)
                                                 .setLogLevel(RestAdapter.LogLevel.FULL)
                                                 .setLog(new AndroidLog("log retrofit"))
@@ -89,23 +96,24 @@ public class Login extends Activity {
                                                         userResponse.user.getFirst_name(),
                                                         userResponse.user.getLast_name(),
                                                         userResponse.user.getBirthdate(),
-                                                        userResponse.user.getGender());
+                                                        userResponse.user.getGender(),
+                                                        access_token);
 
-                                                Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                                                 startActivity(intent);
                                             }
 
                                             @Override
                                             public void failure(RetrofitError error) {
-                                                Toast.makeText(Login.this, "bad request", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(Login.this, "bad request", Toast.LENGTH_SHORT).show();
                                             }
                                         });
                                     }
 
                                     @Override
                                     public void failure(RetrofitError error) {
-                                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
                                     }
                                 });
                             }

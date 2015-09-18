@@ -12,6 +12,16 @@ public class UserInformationStatic {
     public static int gender;
     public static String email;
 
+    public static String getAccess_token() {
+        return access_token;
+    }
+
+    public static void setAccess_token(String access_token) {
+        UserInformationStatic.access_token = access_token;
+    }
+
+    public static String access_token;
+
     public static int getId() {
         return id;
     }
@@ -61,7 +71,8 @@ public class UserInformationStatic {
         UserInformationStatic.first_name = first_name;
     }
 
-    public UserInformationStatic(int id, String email, String first_name, String last_name, String birthdate, int gender)
+
+    public UserInformationStatic(int id, String email, String first_name, String last_name, String birthdate, int gender, String access)
     {
         UserInformationStatic.id = id;
         UserInformationStatic.email = email;
@@ -69,5 +80,6 @@ public class UserInformationStatic {
         UserInformationStatic.last_name = last_name;
         UserInformationStatic.birthdate = birthdate;
         UserInformationStatic.gender = gender;
+        UserInformationStatic.access_token = access;
     }
 }

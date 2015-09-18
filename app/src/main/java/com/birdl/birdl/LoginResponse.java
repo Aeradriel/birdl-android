@@ -16,14 +16,9 @@ public class LoginResponse {
     public String password;
     public String error;
     public String birthdate;
-    public Register user;
 
     public LoginResponse(){}
 
-    public LoginResponse(String error, Register user){
-        this.error = error;
-        this.user = user;
-    }
 
     public String getFirsName(){
         return first_name;
@@ -87,26 +82,5 @@ public class LoginResponse {
 
     public void setError(String error) {
         this.error = error;
-    }
-
-    public Register getUserCurrent() {
-        return user;
-    }
-
-    public void setUserCurrent(Register resp) {
-        this.user = user;
-    }
-
-    public String toJSON() {
-
-        JSONObject jsonObject = new JSONObject();
-        try {
-            jsonObject.put("error", error);
-            jsonObject.put("UserCurrent", user);
-            return jsonObject.toString();
-        } catch (JSONException e) {
-            e.printStackTrace();
-            return "";
-        }
     }
 }
