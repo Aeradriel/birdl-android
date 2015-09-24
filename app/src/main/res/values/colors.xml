@@ -7,4 +7,5 @@
     <color name="navigationBarColor">#000000</color>
     <color name="colorAccent">#FF80AB</color>
     <color name="tabsScrollColor">#8a140e</color>
+    <color name="icons">#EF6C00</color>
 </resources>

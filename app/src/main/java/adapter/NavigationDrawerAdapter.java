@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.birdl.birdl.R;
@@ -40,7 +41,32 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         NavDrawerItem current = data.get(position);
+        String home = "Home";
+        String new_message = "Create message";
+        String inbox = "Inbox";
+        String event = "Event";
+        String disconnect = "Disconnect";
         holder.title.setText(current.getTitle());
+        if (current.getTitle().equals(home))
+        {
+            holder.icon.setImageResource(R.drawable.ic_home);
+        }
+        else if (current.getTitle().equals(new_message))
+        {
+            holder.icon.setImageResource(R.drawable.ic_create_message);
+        }
+        else if (current.getTitle().equals(inbox))
+        {
+            holder.icon.setImageResource(R.drawable.ic_inbox);
+        }
+        else if (current.getTitle().equals(event))
+        {
+            holder.icon.setImageResource(R.drawable.ic_event);
+        }
+        else if (current.getTitle().equals(disconnect))
+        {
+            holder.icon.setImageResource(R.drawable.ic_disconnect);
+        }
     }
 
     @Override
@@ -50,10 +76,12 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title;
+        ImageView icon;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.title);
+            icon = (ImageView) itemView.findViewById(R.id.icon);
         }
     }
 }
