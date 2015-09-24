@@ -1,5 +1,7 @@
 package model;
 
+import android.widget.EditText;
+
 /**
  * Created by Christophe on 15/09/2015.
  */
@@ -11,6 +13,7 @@ public class UserInformationStatic {
     public static String birthdate;
     public static int gender;
     public static String email;
+    public static String password;
 
     public static String getAccess_token() {
         return access_token;
@@ -72,7 +75,7 @@ public class UserInformationStatic {
     }
 
 
-    public UserInformationStatic(int id, String email, String first_name, String last_name, String birthdate, int gender, String access)
+    public UserInformationStatic(int id, String email, String first_name, String last_name, String birthdate, int gender, String access, String pass)
     {
         UserInformationStatic.id = id;
         UserInformationStatic.email = email;
@@ -81,5 +84,6 @@ public class UserInformationStatic {
         UserInformationStatic.birthdate = birthdate;
         UserInformationStatic.gender = gender;
         UserInformationStatic.access_token = access;
+        UserInformationStatic.password = pass;
     }
 }

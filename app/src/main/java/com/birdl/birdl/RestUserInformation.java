@@ -4,6 +4,7 @@ import model.UserInformation;
 import model.UserResponse;
 import retrofit.Callback;
 import retrofit.http.Field;
+import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.Headers;
 import retrofit.http.POST;
@@ -16,6 +17,7 @@ public interface RestUserInformation {
     @GET("/api/me")
     void getInfo(Callback<UserResponse> callback);
 
+    @FormUrlEncoded
     @POST("/api/me")
-    void setInfo(Callback<UserResponse> callback, @Field("password")String pwd, @Field("user") String query);
+    void setInfo(@Field("password") String pwd, @Field("user") String query, Callback<UserResponse> callback);
 }

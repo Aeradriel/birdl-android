@@ -42,6 +42,10 @@ public class Login extends Activity {
     public RestAdapter restAdapterHeader;
     public RequestInterceptor requestInterceptor;
 
+    public static String getPasswordToString(){
+        return password.getText().toString();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +54,6 @@ public class Login extends Activity {
     }
 
     public void LoginButton() {
-
         username = (EditText) findViewById(R.id.user_email);
         password = (EditText) findViewById(R.id.user_pwd);
         login = (Button) findViewById(R.id.connect_button);
@@ -100,6 +103,7 @@ public class Login extends Activity {
                                                         userResponse.user.getLast_name(),
                                                         userResponse.user.getBirthdate(),
                                                         userResponse.user.getGender(),
+<<<<<<< HEAD
                                                         SessionInformation.AccessToken);
 
                                                 //fill event information class
@@ -136,6 +140,14 @@ public class Login extends Activity {
                                                    public void failure(RetrofitError error) {
                                                    }
                                                });
+=======
+                                                        access_token,
+                                                        password.getText().toString());
+
+                                                Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
+                                                Intent intent = new Intent("com.birdl.birdl.action.menu");
+                                                startActivity(intent);
+>>>>>>> 401362a3fed8f52e3f38b860545e4dac65dbe911
                                             }
 
                                                 @Override
@@ -196,4 +208,6 @@ public class Login extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
