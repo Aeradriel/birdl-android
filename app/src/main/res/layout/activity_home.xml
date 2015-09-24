@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="info.androidhive.materialdesign.activity.HomeFragment"
-    android:background="@android:color/white">
+    android:background="@drawable/color18">
 
     <TableLayout
         android:id="@+id/table"
