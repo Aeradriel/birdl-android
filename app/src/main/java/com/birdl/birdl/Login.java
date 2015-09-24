@@ -36,6 +36,10 @@ public class Login extends Activity {
     private CheckBox memo;
     String access_token;
 
+    public static String getPasswordToString(){
+        return password.getText().toString();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,15 +48,11 @@ public class Login extends Activity {
     }
 
     public void LoginButton() {
-
         username = (EditText) findViewById(R.id.user_email);
         password = (EditText) findViewById(R.id.user_pwd);
         login = (Button) findViewById(R.id.connect_button);
         sign_up = (Button) findViewById(R.id.sign_up);
         final RetrofitError error;
-
-
-
 
         login.setOnClickListener(
                 new View.OnClickListener() {
@@ -160,4 +160,6 @@ public class Login extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

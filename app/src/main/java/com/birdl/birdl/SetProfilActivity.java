@@ -16,8 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.okhttp.Call;
+
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.PasswordAuthentication;
 import java.util.Set;
 
 import activity.MainActivity;
@@ -46,7 +49,8 @@ public class SetProfilActivity extends Activity {
     private EditText LastNameField = null;
     private EditText BirthdateField = null;
     private EditText EmailField = null;
-    private static String pass;
+    private String pass;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -76,6 +80,7 @@ public class SetProfilActivity extends Activity {
             }
         });
 
+        pass = Login.getPasswordToString();
 
         RequestInterceptor requestInterceptor = new RequestInterceptor() {
             public void intercept(RequestFacade request) {
@@ -94,7 +99,7 @@ public class SetProfilActivity extends Activity {
 
         final String query = "{\"email\":\"" + EmailModif + "\"" + ",\"first_name\":\"" + FirstNameModif + "\"" + ",\"last_name\":\"" +
                 LastNameModif + "\"" + ",\"password\":\"" + pass + "\"" + ",\"birthdate\":\"" +
-                BirthdateModif + "\"" + "}";
+                BirthdateModif.replace('-', '/') + "\"" + "}";
 
                 Button ButtonSubmit = (Button) findViewById(R.id.buttonSubmit);
             ButtonSubmit.setOnClickListener(new View.OnClickListener() {
@@ -108,7 +113,7 @@ public class SetProfilActivity extends Activity {
 
                     @Override
                     public void failure(RetrofitError error) {
-                        Toast.makeText(SetProfilActivity.this, query, Toast.LENGTH_LONG).show();
+                        Toast.makeText(SetProfilActivity.this, pass, Toast.LENGTH_LONG).show();
                         Toast.makeText(SetProfilActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -146,3 +151,4 @@ public class SetProfilActivity extends Activity {
         return true;
     }
 }
+
