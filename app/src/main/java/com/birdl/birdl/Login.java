@@ -97,7 +97,8 @@ public class Login extends Activity {
                                                         userResponse.user.getLast_name(),
                                                         userResponse.user.getBirthdate(),
                                                         userResponse.user.getGender(),
-                                                        access_token);
+                                                        access_token,
+                                                        password.getText().toString());
 
                                                 Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent("com.birdl.birdl.action.menu");

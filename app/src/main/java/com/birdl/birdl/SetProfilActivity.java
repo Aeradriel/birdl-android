@@ -14,11 +14,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.util.Set;
 
 import activity.MainActivity;
+import model.UserInformationStatic;
+import model.UserResponse;
+import retrofit.Callback;
+import retrofit.RequestInterceptor;
+import retrofit.RestAdapter;
+import retrofit.RetrofitError;
+import retrofit.android.AndroidLog;
+import retrofit.client.Response;
 
 /**
  * Created by Christophe on 08/08/2015.
@@ -26,6 +36,7 @@ import activity.MainActivity;
 public class SetProfilActivity extends Activity {
     private ImageView profilPic;
     private Button pickImage;
+    RestUserInformation start;
     private final int SELECT_PHOTO = 1;
     public static String FirstNameModif;
     public static String LastNameModif;
@@ -35,6 +46,7 @@ public class SetProfilActivity extends Activity {
     private EditText LastNameField = null;
     private EditText BirthdateField = null;
     private EditText EmailField = null;
+    private static String pass;
 
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -63,10 +75,43 @@ public class SetProfilActivity extends Activity {
                 startActivityForResult(photoPickerIntent, SELECT_PHOTO);
             }
         });
-        Button ButtonSubmit = (Button) findViewById(R.id.buttonSubmit);
-        ButtonSubmit.setOnClickListener(new View.OnClickListener() {
+
+
+        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+            public void intercept(RequestFacade request) {
+                request.addHeader("ACCESS-TOKEN", SessionInformation.AccessToken);
+            }
+        };
+
+        final RestAdapter adapter = new RestAdapter.Builder()
+                .setEndpoint("http://163.5.84.208:3000/")
+                .setRequestInterceptor(requestInterceptor)
+                .setLogLevel(RestAdapter.LogLevel.FULL)
+                .setLog(new AndroidLog("log retrofit"))
+                .build();
+
+        final RestUserInformation getUserInfo = adapter.create(RestUserInformation.class);
+
+        final String query = "{\"email\":\"" + EmailModif + "\"" + ",\"first_name\":\"" + FirstNameModif + "\"" + ",\"last_name\":\"" +
+                LastNameModif + "\"" + ",\"password\":\"" + pass + "\"" + ",\"birthdate\":\"" +
+                BirthdateModif + "\"" + "}";
+
+                Button ButtonSubmit = (Button) findViewById(R.id.buttonSubmit);
+            ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getUserInfo.setInfo(pass, query, new Callback<UserResponse>() {
+                    @Override
+                    public void success(UserResponse userResponse, Response response) {
+                        Toast.makeText(SetProfilActivity.this, "Update Success", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void failure(RetrofitError error) {
+                        Toast.makeText(SetProfilActivity.this, query, Toast.LENGTH_LONG).show();
+                        Toast.makeText(SetProfilActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 MainActivity.FirstNameModif = FirstNameField.getText().toString();
                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                 startActivity(intent);
