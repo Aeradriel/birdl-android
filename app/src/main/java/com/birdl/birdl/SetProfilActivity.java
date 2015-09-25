@@ -113,7 +113,6 @@ public class SetProfilActivity extends Activity {
 
                     @Override
                     public void failure(RetrofitError error) {
-                        Toast.makeText(SetProfilActivity.this, pass, Toast.LENGTH_LONG).show();
                         Toast.makeText(SetProfilActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
                     }
                 });

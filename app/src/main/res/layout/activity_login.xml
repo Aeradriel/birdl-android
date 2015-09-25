@@ -5,7 +5,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".Login"
     android:id="@+id/mainview"
-    android:background="@drawable/color18">
+    android:background="@drawable/color18"
+    android:scaleType="centerCrop">
 
     <EditText
         android:layout_width="wrap_content"
