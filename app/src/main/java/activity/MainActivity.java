@@ -22,6 +22,7 @@ import com.birdl.birdl.NewMessageActivity;
 import com.birdl.birdl.R;
 import com.birdl.birdl.SetProfilActivity;
 
+import model.AllEventResponseStatic;
 import model.UserInformationStatic;
 import com.birdl.birdl.SlidingEventLayout;
 
@@ -48,6 +49,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
+
+        //test
+        String test = AllEventResponseStatic.events.get(0).name;
+        String desc = AllEventResponseStatic.events.get(0).desc;
 
         //Firstname
         FirstName = (TextView) findViewById(R.id.usernameProfil);

@@ -7,14 +7,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-import activity.MainActivity;
-import model.UserInformation;
+import model.AllEventInformation;
+import model.AllEventInformationStatic;
+import model.AllEventResponse;
+import model.AllEventResponseStatic;
 import model.UserInformationStatic;
 import model.UserResponse;
 import retrofit.RequestInterceptor;
@@ -27,14 +30,17 @@ import retrofit.client.Response;
 
 
 public class Login extends Activity {
+
     private static EditText username;
     private static EditText password;
     private static Button login;
     private static Button sign_up;
     static int i = 0;
-    static UserInformationStatic informationStatic;
-    private CheckBox memo;
-    String access_token;
+    static UserInformationStatic InformationStatic;
+    static AllEventResponseStatic allEventResponseStatic;
+    static AllEventInformationStatic allEventInformationStatic;
+    public RestAdapter restAdapterHeader;
+    public RequestInterceptor requestInterceptor;
 
     public static String getPasswordToString(){
         return password.getText().toString();
@@ -73,52 +79,94 @@ public class Login extends Activity {
                                         List<Header> test = response.getHeaders();
                                         SessionInformation.ChangeAccessToken(test.get(2).toString());
 
-
-                                        RequestInterceptor requestInterceptor = new RequestInterceptor() {
+                                        requestInterceptor = new RequestInterceptor() {
                                             public void intercept(RequestFacade request) {
                                                 request.addHeader("ACCESS-TOKEN", SessionInformation.AccessToken);
-                                                access_token = SessionInformation.AccessToken;
                                             }
                                         };
 
-                                        final RestAdapter userInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                        restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
                                                 .setRequestInterceptor(requestInterceptor)
                                                 .setLogLevel(RestAdapter.LogLevel.FULL)
                                                 .setLog(new AndroidLog("log retrofit"))
                                                 .build();
-                                        RestUserInformation getUserInfo = userInformation.create(RestUserInformation.class);
+
+                                        // fill user information class
+                                        RestUserInformation getUserInfo = restAdapterHeader.create(RestUserInformation.class);
                                         getUserInfo.getInfo(new Callback<UserResponse>() {
                                             @Override
                                             public void success(UserResponse userResponse, Response response2) {
-                                                informationStatic = new UserInformationStatic(
+                                                InformationStatic = new UserInformationStatic(
                                                         userResponse.user.getId(),
                                                         userResponse.user.getEmail(),
                                                         userResponse.user.getFirst_name(),
                                                         userResponse.user.getLast_name(),
                                                         userResponse.user.getBirthdate(),
                                                         userResponse.user.getGender(),
+<<<<<<< HEAD
+                                                        SessionInformation.AccessToken);
+
+                                                //fill event information class
+                                                RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                                       .setRequestInterceptor(requestInterceptor)
+                                                       .setLogLevel(RestAdapter.LogLevel.FULL)
+                                                       .setLog(new AndroidLog("log retrofit"))
+                                                       .build();
+                                               RestAllEventInformation getEventInfo = eventInformation.create(RestAllEventInformation.class);
+                                               getEventInfo.getInfo(new Callback<AllEventResponse>() {
+                                                   @Override
+                                                   public void success(AllEventResponse allEventResponse, Response response3) {
+
+                                                       AllEventResponseStatic.events = new ArrayList<AllEventInformationStatic>();
+                                                       for (int i = 0; i < allEventResponse.events.size(); i++)
+                                                       {
+                                                           AllEventResponseStatic.events.add(new AllEventInformationStatic(allEventResponse.events.get(i).id,
+                                                                   allEventResponse.events.get(i).getName(),
+                                                                   allEventResponse.events.get(i).getType(),
+                                                                   allEventResponse.events.get(i).getMin_slots(),
+                                                                   allEventResponse.events.get(i).getMax_slots(),
+                                                                   allEventResponse.events.get(i).getDate(),
+                                                                   allEventResponse.events.get(i).getDesc(),
+                                                                   allEventResponse.events.get(i).getOwner_id(),
+                                                                   allEventResponse.events.get(i).getAddress_id(),
+                                                                   allEventResponse.events.get(i).getLocation()));
+                                                       }
+                                                       Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
+                                                       Intent intent = new Intent("com.birdl.birdl.action.menu");
+                                                       startActivity(intent);
+                                                   }
+
+                                                   @Override
+                                                   public void failure(RetrofitError error) {
+                                                   }
+                                               });
+=======
                                                         access_token,
                                                         password.getText().toString());
 
                                                 Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                                                 startActivity(intent);
+>>>>>>> 401362a3fed8f52e3f38b860545e4dac65dbe911
                                             }
 
-                                            @Override
-                                            public void failure(RetrofitError error) {
-                                                Toast.makeText(Login.this, "bad request", Toast.LENGTH_SHORT).show();
+                                                @Override
+                                                public void failure (RetrofitError error){
+                                                    Toast.makeText(Login.this, "bad user information request", Toast.LENGTH_LONG).show();
+                                                }
                                             }
-                                        });
+                                        );
                                     }
 
-                                    @Override
-                                    public void failure(RetrofitError error) {
-                                        Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                                        @Override
+                                        public void failure (RetrofitError error){
+                                            Toast.makeText(Login.this, "Login Failed", Toast.LENGTH_LONG).show();
+                                        }
                                     }
-                                });
-                            }
-                        });
+
+                                    );
+                                }
+                            });
                         fetch.start();
                     }
                 });

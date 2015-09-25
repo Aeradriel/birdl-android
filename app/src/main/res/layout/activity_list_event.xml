@@ -6,8 +6,9 @@
     android:background="@android:color/white">
 
     <ListView
-        android:id="@android:id/list"
+        android:id="@+id/list_event"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:dividerHeight="1dp"/>
 
 </LinearLayout>
