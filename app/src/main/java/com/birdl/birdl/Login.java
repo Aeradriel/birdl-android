@@ -27,6 +27,7 @@ import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.Header;
 import retrofit.client.Response;
+import retrofit.http.HEAD;
 
 
 public class Login extends Activity {
@@ -103,8 +104,8 @@ public class Login extends Activity {
                                                         userResponse.user.getLast_name(),
                                                         userResponse.user.getBirthdate(),
                                                         userResponse.user.getGender(),
-<<<<<<< HEAD
-                                                        SessionInformation.AccessToken);
+                                                        SessionInformation.AccessToken,
+                                                        password.getText().toString());
 
                                                 //fill event information class
                                                 RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
@@ -140,14 +141,10 @@ public class Login extends Activity {
                                                    public void failure(RetrofitError error) {
                                                    }
                                                });
-=======
-                                                        access_token,
-                                                        password.getText().toString());
 
                                                 Toast.makeText(Login.this, "Logged in", Toast.LENGTH_SHORT).show();
                                                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                                                 startActivity(intent);
->>>>>>> 401362a3fed8f52e3f38b860545e4dac65dbe911
                                             }
 
                                                 @Override
