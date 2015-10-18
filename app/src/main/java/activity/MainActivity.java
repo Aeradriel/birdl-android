@@ -50,10 +50,6 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
 
-        //test
-        String test = AllEventResponseStatic.events.get(0).name;
-        String desc = AllEventResponseStatic.events.get(0).desc;
-
         //Firstname
         FirstName = (TextView) findViewById(R.id.usernameProfil);
         if (FirstNameModif != null) {

@@ -98,10 +98,9 @@ public class SetProfilActivity extends Activity {
             ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String birth_date =  BirthdateField.getText().toString();
                 final String query = "{\"email\":\"" + EmailField.getText().toString() + "\"" + ",\"first_name\":\"" + FirstNameField.getText().toString() + "\"" + ",\"last_name\":\"" +
                         LastNameField.getText().toString() + "\"" + ",\"birthdate\":\"" +
-                        BirthdateField.getText().toString() + "\"" + "}";
+                        BirthdateField.getText().toString().replace('-', '/') + "\"" + "}";
                 getUserInfo.setInfo(pass, query, new Callback<UserResponse>() {
                     @Override
                     public void success(UserResponse userResponse, Response response) {

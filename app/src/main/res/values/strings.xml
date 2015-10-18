@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="hello_world">Hello world!</string>
     <string name="Policy_and_privacy">Policy and privacy</string>
     <string name="new_event">New event</string>
@@ -96,10 +96,6 @@
 
     <!-- COUNTRY LIST -->
     <string-array name="country_names">
-        <item>France</item>
-        <item>United States</item>
-        <item>United Kingdom</item>
-        <item>Spain</item>
         <item>Albania</item>
         <item>Algeria</item>
         <item>Andorra</item>
@@ -255,13 +251,19 @@
         <item>Ukraine</item>
         <item>Uruguay</item>
         <item>Uzbekistan</item>
+        <item>Venezuela</item>
+        <item>Viet Name</item>
+        <item>Western Sahara</item>
+        <item>Yemen</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>France</item>
+        <item>Spain</item>
     </string-array>
 
     <string-array name="country_codes">
-        <item>59</item>
-        <item>160</item>
-        <item>169</item>
-        <item>142</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
@@ -416,14 +418,20 @@
         <item>158</item>
         <item>159</item>
         <item>161</item>
-
+        <item>162</item>
+        <item>163</item>
+        <item>164</item>
+        <item>165</item>
+        <item>166</item>
+        <item>167</item>
+        <item>168</item>
+        <item>160</item>
+        <item>169</item>
+        <item>59</item>
+        <item>142</item>
     </string-array>
 
     <string-array name="country_flags">
-        <item>@drawable/flag_fr</item>
-        <item>@drawable/flag_gb</item>
-        <item>@drawable/flag_us</item>
-        <item>@drawable/flag_es</item>
         <item>@drawable/flag_al</item>
         <item>@drawable/flag_dz</item>
         <item>@drawable/flag_ad</item>
@@ -444,6 +452,9 @@
         <item>@drawable/flag_bt</item>
         <item>@drawable/flag_bo</item>
         <item>@drawable/flag_ba</item>
+        <item>@drawable/flag_bw</item>
+        <item>@drawable/flag_br</item>
+        <item>@drawable/flag_bg</item>
         <item>@drawable/flag_bf</item>
         <item>@drawable/flag_mm</item>
         <item>@drawable/flag_bi</item>
@@ -468,14 +479,14 @@
         <item>@drawable/flag_dj</item>
         <item>@drawable/flag_dm</item>
         <item>@drawable/flag_do</item>
-        <item>@drawable/flag_et</item>
+        <item>@drawable/flag_tl</item>
         <item>@drawable/flag_ec</item>
         <item>@drawable/flag_eg</item>
         <item>@drawable/flag_sv</item>
         <item>@drawable/flag_gq</item>
         <item>@drawable/flag_er</item>
         <item>@drawable/flag_ee</item>
-        <item>@drawable/flag_tl</item>
+        <item>@drawable/flag_et</item>
         <item>@drawable/flag_fi</item>
         <item>@drawable/flag_ga</item>
         <item>@drawable/flag_gm</item>
@@ -519,6 +530,7 @@
         <item>@drawable/flag_ml</item>
         <item>@drawable/flag_mt</item>
         <item>@drawable/flag_mr</item>
+        <item>@drawable/flag_mu</item>
         <item>@drawable/flag_mx</item>
         <item>@drawable/flag_md</item>
         <item>@drawable/flag_mn</item>
@@ -543,7 +555,6 @@
         <item>@drawable/flag_pt</item>
         <item>@drawable/flag_pr</item>
         <item>@drawable/flag_qa</item>
-        <item>@drawable/flag_gn</item>
         <item>@drawable/flag_ro</item>
         <item>@drawable/flag_ru</item>
         <item>@drawable/flag_rw</item>
@@ -576,6 +587,16 @@
         <item>@drawable/flag_ua</item>
         <item>@drawable/flag_uy</item>
         <item>@drawable/flag_uz</item>
+        <item>@drawable/flag_ve</item>
+        <item>@drawable/flag_vn</item>
+        <item>@drawable/flag_ma</item>
+        <item>@drawable/flag_ye</item>
+        <item>@drawable/flag_zm</item>
+        <item>@drawable/flag_zw</item>
+        <item>@drawable/flag_us</item>
+        <item>@drawable/flag_gb</item>
+        <item>@drawable/flag_fr</item>
+        <item>@drawable/flag_es</item>
     </string-array>
 
 </resources>
