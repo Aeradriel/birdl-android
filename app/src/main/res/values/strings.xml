@@ -96,6 +96,10 @@
 
     <!-- COUNTRY LIST -->
     <string-array name="country_names">
+        <item>France</item>
+        <item>United States</item>
+        <item>United Kingdom</item>
+        <item>Spain</item>
         <item>Albania</item>
         <item>Algeria</item>
         <item>Andorra</item>
@@ -120,7 +124,7 @@
         <item>Brazil</item>
         <item>Bulgaria</item>
         <item>Burkina Faso</item>
-        <item>Burma</item> <!--
+        <item>Burma</item>
         <item>Burundi</item>
         <item>Cambodia</item>
         <item>Cameroon</item>
@@ -251,19 +255,13 @@
         <item>Ukraine</item>
         <item>Uruguay</item>
         <item>Uzbekistan</item>
-        <item>Venezuela</item>
-        <item>Viet Name</item>
-        <item>Western Sahara</item>
-        <item>Yemen</item>
-        <item>Zambia</item>
-        <item>Zimbabwe</item>
-        <item>United States</item>
-        <item>France</item>
-        <item>United Kingdom</item>
-        <item>Spain</item> -->
     </string-array>
 
     <string-array name="country_codes">
+        <item>59</item>
+        <item>160</item>
+        <item>169</item>
+        <item>142</item>
         <item>4</item>
         <item>5</item>
         <item>6</item>
@@ -287,7 +285,7 @@
         <item>22</item>
         <item>23</item>
         <item>24</item>
-        <item>25</item><!--
+        <item>25</item>
         <item>26</item>
         <item>27</item>
         <item>28</item>
@@ -418,20 +416,14 @@
         <item>158</item>
         <item>159</item>
         <item>161</item>
-        <item>162</item>
-        <item>163</item>
-        <item>164</item>
-        <item>165</item>
-        <item>166</item>
-        <item>167</item>
-        <item>168</item>
-        <item>160</item>
-        <item>59</item>
-        <item>169</item>
-        <item>142</item> -->
+
     </string-array>
 
     <string-array name="country_flags">
+        <item>@drawable/flag_fr</item>
+        <item>@drawable/flag_gb</item>
+        <item>@drawable/flag_us</item>
+        <item>@drawable/flag_es</item>
         <item>@drawable/flag_al</item>
         <item>@drawable/flag_dz</item>
         <item>@drawable/flag_ad</item>
@@ -456,7 +448,7 @@
         <item>@drawable/flag_mm</item>
         <item>@drawable/flag_bi</item>
         <item>@drawable/flag_kh</item>
-        <item>@drawable/flag_cm</item><!--
+        <item>@drawable/flag_cm</item>
         <item>@drawable/flag_ca</item>
         <item>@drawable/flag_cv</item>
         <item>@drawable/flag_cf</item>
@@ -584,16 +576,6 @@
         <item>@drawable/flag_ua</item>
         <item>@drawable/flag_uy</item>
         <item>@drawable/flag_uz</item>
-        <item>@drawable/flag_ve</item>
-        <item>@drawable/flag_vn</item>
-        <item>@drawable/flag_ma</item>
-        <item>@drawable/flag_ye</item>
-        <item>@drawable/flag_zm</item>
-        <item>@drawable/flag_zw</item>
-        <item>@drawable/flag_us</item>
-        <item>@drawable/flag_fr</item>
-        <item>@drawable/flag_es</item>
-        -->
     </string-array>
 
 </resources>
