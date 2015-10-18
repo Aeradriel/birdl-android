@@ -33,9 +33,6 @@ import retrofit.RetrofitError;
 import retrofit.android.AndroidLog;
 import retrofit.client.Response;
 
-/**
- * Created by Christophe on 08/08/2015.
- */
 public class SetProfilActivity extends Activity {
     private ImageView profilPic;
     private Button pickImage;
@@ -88,7 +85,7 @@ public class SetProfilActivity extends Activity {
             }
         };
 
-        final RestAdapter adapter = new RestAdapter.Builder()
+         RestAdapter adapter = new RestAdapter.Builder()
                 .setEndpoint("http://163.5.84.208:3000/")
                 .setRequestInterceptor(requestInterceptor)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
@@ -96,15 +93,15 @@ public class SetProfilActivity extends Activity {
                 .build();
 
         final RestUserInformation getUserInfo = adapter.create(RestUserInformation.class);
+        Button ButtonSubmit = (Button) findViewById(R.id.buttonSubmit);
 
-        final String query = "{\"email\":\"" + EmailModif + "\"" + ",\"first_name\":\"" + FirstNameModif + "\"" + ",\"last_name\":\"" +
-                LastNameModif + "\"" + ",\"password\":\"" + pass + "\"" + ",\"birthdate\":\"" +
-                BirthdateModif.replace('-', '/') + "\"" + "}";
-
-                Button ButtonSubmit = (Button) findViewById(R.id.buttonSubmit);
             ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final String birth_date =  BirthdateField.getText().toString();
+                final String query = "{\"email\":\"" + EmailField.getText().toString() + "\"" + ",\"first_name\":\"" + FirstNameField.getText().toString() + "\"" + ",\"last_name\":\"" +
+                        LastNameField.getText().toString() + "\"" + ",\"birthdate\":\"" +
+                        BirthdateField.getText().toString() + "\"" + "}";
                 getUserInfo.setInfo(pass, query, new Callback<UserResponse>() {
                     @Override
                     public void success(UserResponse userResponse, Response response) {
@@ -116,7 +113,7 @@ public class SetProfilActivity extends Activity {
                         Toast.makeText(SetProfilActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
                     }
                 });
-                MainActivity.FirstNameModif = FirstNameField.getText().toString();
+                //MainActivity.FirstNameModif = FirstNameField.getText().toString();
                 Intent intent = new Intent("com.birdl.birdl.action.menu");
                 startActivity(intent);
             }

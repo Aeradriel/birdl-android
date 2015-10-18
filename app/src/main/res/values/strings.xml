@@ -94,28 +94,506 @@
     <string name="email_usr">Adresse mail</string>
     <string name="pass_usr">Mot de passe</string>
 
+    <!-- COUNTRY LIST -->
     <string-array name="country_names">
-        <item>United States"</item>
+        <item>Albania</item>
+        <item>Algeria</item>
+        <item>Andorra</item>
+        <item>Angola</item>
+        <item>Argentina</item>
+        <item>Armenia</item>
+        <item>Australia</item>
+        <item>Austria</item>
+        <item>Azerbaijan</item>
+        <item>Guatemala</item>
+        <item>Guinea-Bissau</item>
+        <item>Bangladesh</item>
+        <item>Afghanistan</item>
+        <item>Belarus</item>
+        <item>Belgium</item>
+        <item>Belize</item>
+        <item>Benin</item>
+        <item>Bhutan</item>
+        <item>Bolivia</item>
+        <item>Bosnia and Herzegovina</item>
+        <item>Botswana</item>
+        <item>Brazil</item>
+        <item>Bulgaria</item>
+        <item>Burkina Faso</item>
+        <item>Burma</item> <!--
+        <item>Burundi</item>
+        <item>Cambodia</item>
+        <item>Cameroon</item>
+        <item>Canada</item>
+        <item>Cape Verde</item>
+        <item>Central African Republic</item>
+        <item>Chad</item>
+        <item>Chile</item>
+        <item>China</item>
+        <item>Colombia</item>
+        <item>Demo Rep of the Congo</item>
+        <item>Congo</item>
+        <item>Costa Rica</item>
+        <item>Ivory Coast</item>
+        <item>Croatia</item>
+        <item>Cuba</item>
+        <item>Cyprus</item>
+        <item>Czech Republic</item>
         <item>Denmark</item>
-        <item>Sweden</item>
+        <item>Djibouti</item>
+        <item>Dominica</item>
+        <item>Dominican Republic</item>
+        <item>East Timor</item>
+        <item>Ecuador</item>
+        <item>Egypt</item>
+        <item>El Salvador</item>
+        <item>Equatorial Guinea</item>
+        <item>Eritrea</item>
+        <item>Estonia</item>
+        <item>Ethiopia</item>
+        <item>Finland</item>
+        <item>Gabon</item>
+        <item>Gambia</item>
+        <item>Georgia</item>
+        <item>Germany</item>
+        <item>Ghana</item>
+        <item>Greece</item>
+        <item>Guinea</item>
+        <item>Guyana</item>
+        <item>Haiti</item>
+        <item>Honduras</item>
+        <item>Hungary</item>
+        <item>Iceland</item>
+        <item>India</item>
+        <item>Indonesia</item>
+        <item>Iran</item>
+        <item>Iraq</item>
+        <item>Ireland</item>
+        <item>Israel</item>
+        <item>Italy</item>
+        <item>Jamaica</item>
+        <item>Japan</item>
+        <item>Jordan</item>
+        <item>Kazakhstan</item>
+        <item>Kenya</item>
+        <item>Kuwait</item>
+        <item>Kyrgyzstan</item>
+        <item>Laos</item>
+        <item>Latvia</item>
+        <item>Lebanon</item>
+        <item>Lesotho</item>
+        <item>Liberia</item>
+        <item>Libya</item>
+        <item>Lithuania</item>
+        <item>Luxembourg</item>
+        <item>Macedonia</item>
+        <item>Madagascar</item>
+        <item>Malawi</item>
+        <item>Malaysia</item>
+        <item>Maldives</item>
+        <item>Mali</item>
+        <item>Malta</item>
+        <item>Mauritania</item>
+        <item>Mauritius</item>
+        <item>Mexico</item>
+        <item>Moldova</item>
+        <item>Mongolia</item>
+        <item>Morocco</item>
+        <item>Mozambique</item>
+        <item>Namibia</item>
+        <item>Nepal</item>
+        <item>Netherlands</item>
+        <item>New Zealand</item>
+        <item>Nicaragua</item>
+        <item>Niger</item>
+        <item>Nigeria</item>
+        <item>North Korea</item>
         <item>Norway</item>
+        <item>Oman</item>
+        <item>Pakistan</item>
+        <item>Panama</item>
+        <item>Paraguay</item>
+        <item>Peru</item>
+        <item>Philippines</item>
+        <item>Poland</item>
+        <item>Portugal</item>
+        <item>Puerto Rico</item>
+        <item>Qatar</item>
+        <item>Romania</item>
+        <item>Russia</item>
+        <item>Rwanda</item>
+        <item>Saudi Arabia</item>
+        <item>Scotland</item>
+        <item>Senegal</item>
+        <item>Serbia</item>
+        <item>Sierra Leone</item>
+        <item>Slovakia</item>
+        <item>Slovenia</item>
+        <item>Somalia</item>
+        <item>South Africa</item>
+        <item>South Korea</item>
+        <item>Sri Lanka</item>
+        <item>Sudan</item>
+        <item>Suriname</item>
+        <item>Swaziland</item>
+        <item>Sweden</item>
+        <item>Switzerland</item>
+        <item>Syria</item>
+        <item>Tajikistan</item>
+        <item>Tanzania</item>
+        <item>Thailand</item>
+        <item>Togo</item>
+        <item>Trinidad and Tobago</item>
+        <item>Tunisia</item>
+        <item>Turkey</item>
+        <item>Turkmenistan</item>
+        <item>Uganda</item>
+        <item>Ukraine</item>
+        <item>Uruguay</item>
+        <item>Uzbekistan</item>
+        <item>Venezuela</item>
+        <item>Viet Name</item>
+        <item>Western Sahara</item>
+        <item>Yemen</item>
+        <item>Zambia</item>
+        <item>Zimbabwe</item>
+        <item>United States</item>
         <item>France</item>
+        <item>United Kingdom</item>
+        <item>Spain</item> -->
     </string-array>
 
     <string-array name="country_codes">
-        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>66</item>
+        <item>67</item>
+        <item>14</item>
+        <item>3</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item><!--
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
         <item>45</item>
         <item>46</item>
         <item>47</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
+        <item>71</item>
+        <item>72</item>
+        <item>73</item>
+        <item>74</item>
+        <item>75</item>
+        <item>76</item>
+        <item>77</item>
+        <item>78</item>
+        <item>79</item>
+        <item>80</item>
+        <item>81</item>
+        <item>82</item>
+        <item>83</item>
+        <item>84</item>
+        <item>85</item>
+        <item>86</item>
+        <item>87</item>
+        <item>88</item>
+        <item>89</item>
+        <item>90</item>
+        <item>91</item>
+        <item>92</item>
+        <item>93</item>
+        <item>94</item>
+        <item>95</item>
+        <item>96</item>
+        <item>97</item>
+        <item>98</item>
+        <item>99</item>
+        <item>100</item>
+        <item>101</item>
+        <item>102</item>
+        <item>103</item>
+        <item>104</item>
+        <item>105</item>
+        <item>106</item>
+        <item>107</item>
+        <item>108</item>
+        <item>109</item>
+        <item>110</item>
+        <item>111</item>
+        <item>112</item>
+        <item>113</item>
+        <item>114</item>
+        <item>115</item>
+        <item>116</item>
+        <item>117</item>
+        <item>118</item>
+        <item>119</item>
+        <item>120</item>
+        <item>121</item>
+        <item>122</item>
+        <item>123</item>
+        <item>124</item>
+        <item>125</item>
+        <item>126</item>
+        <item>127</item>
+        <item>128</item>
+        <item>129</item>
+        <item>130</item>
+        <item>131</item>
+        <item>132</item>
+        <item>133</item>
+        <item>134</item>
+        <item>135</item>
+        <item>136</item>
+        <item>137</item>
+        <item>138</item>
+        <item>139</item>
+        <item>140</item>
+        <item>141</item>
+        <item>143</item>
+        <item>144</item>
+        <item>145</item>
+        <item>146</item>
+        <item>147</item>
+        <item>148</item>
+        <item>149</item>
+        <item>150</item>
+        <item>151</item>
+        <item>152</item>
+        <item>153</item>
+        <item>154</item>
+        <item>155</item>
+        <item>156</item>
+        <item>157</item>
+        <item>158</item>
+        <item>159</item>
+        <item>161</item>
+        <item>162</item>
+        <item>163</item>
+        <item>164</item>
+        <item>165</item>
+        <item>166</item>
+        <item>167</item>
+        <item>168</item>
+        <item>160</item>
         <item>59</item>
+        <item>169</item>
+        <item>142</item> -->
     </string-array>
 
     <string-array name="country_flags">
-        <item>@drawable/flag_us</item>
+        <item>@drawable/flag_al</item>
+        <item>@drawable/flag_dz</item>
+        <item>@drawable/flag_ad</item>
+        <item>@drawable/flag_ao</item>
+        <item>@drawable/flag_ar</item>
+        <item>@drawable/flag_am</item>
+        <item>@drawable/flag_au</item>
+        <item>@drawable/flag_at</item>
+        <item>@drawable/flag_az</item>
+        <item>@drawable/flag_gt</item>
+        <item>@drawable/flag_gw</item>
+        <item>@drawable/flag_bd</item>
+        <item>@drawable/flag_af</item>
+        <item>@drawable/flag_by</item>
+        <item>@drawable/flag_be</item>
+        <item>@drawable/flag_bz</item>
+        <item>@drawable/flag_bj</item>
+        <item>@drawable/flag_bt</item>
+        <item>@drawable/flag_bo</item>
+        <item>@drawable/flag_ba</item>
+        <item>@drawable/flag_bf</item>
+        <item>@drawable/flag_mm</item>
+        <item>@drawable/flag_bi</item>
+        <item>@drawable/flag_kh</item>
+        <item>@drawable/flag_cm</item><!--
+        <item>@drawable/flag_ca</item>
+        <item>@drawable/flag_cv</item>
+        <item>@drawable/flag_cf</item>
+        <item>@drawable/flag_td</item>
+        <item>@drawable/flag_cl</item>
+        <item>@drawable/flag_cn</item>
+        <item>@drawable/flag_co</item>
+        <item>@drawable/flag_cd</item>
+        <item>@drawable/flag_cg</item>
+        <item>@drawable/flag_cr</item>
+        <item>@drawable/flag_ci</item>
+        <item>@drawable/flag_hr</item>
+        <item>@drawable/flag_cu</item>
+        <item>@drawable/flag_cy</item>
+        <item>@drawable/flag_cz</item>
         <item>@drawable/flag_dk</item>
-        <item>@drawable/flag_se</item>
+        <item>@drawable/flag_dj</item>
+        <item>@drawable/flag_dm</item>
+        <item>@drawable/flag_do</item>
+        <item>@drawable/flag_et</item>
+        <item>@drawable/flag_ec</item>
+        <item>@drawable/flag_eg</item>
+        <item>@drawable/flag_sv</item>
+        <item>@drawable/flag_gq</item>
+        <item>@drawable/flag_er</item>
+        <item>@drawable/flag_ee</item>
+        <item>@drawable/flag_tl</item>
+        <item>@drawable/flag_fi</item>
+        <item>@drawable/flag_ga</item>
+        <item>@drawable/flag_gm</item>
+        <item>@drawable/flag_ge</item>
+        <item>@drawable/flag_de</item>
+        <item>@drawable/flag_gh</item>
+        <item>@drawable/flag_gr</item>
+        <item>@drawable/flag_gn</item>
+        <item>@drawable/flag_gy</item>
+        <item>@drawable/flag_ht</item>
+        <item>@drawable/flag_hn</item>
+        <item>@drawable/flag_hu</item>
+        <item>@drawable/flag_is</item>
+        <item>@drawable/flag_in</item>
+        <item>@drawable/flag_id</item>
+        <item>@drawable/flag_ir</item>
+        <item>@drawable/flag_iq</item>
+        <item>@drawable/flag_ie</item>
+        <item>@drawable/flag_il</item>
+        <item>@drawable/flag_it</item>
+        <item>@drawable/flag_jm</item>
+        <item>@drawable/flag_jp</item>
+        <item>@drawable/flag_jo</item>
+        <item>@drawable/flag_kz</item>
+        <item>@drawable/flag_ke</item>
+        <item>@drawable/flag_kw</item>
+        <item>@drawable/flag_kg</item>
+        <item>@drawable/flag_la</item>
+        <item>@drawable/flag_lv</item>
+        <item>@drawable/flag_lb</item>
+        <item>@drawable/flag_ls</item>
+        <item>@drawable/flag_lr</item>
+        <item>@drawable/flag_ly</item>
+        <item>@drawable/flag_lt</item>
+        <item>@drawable/flag_lu</item>
+        <item>@drawable/flag_mk</item>
+        <item>@drawable/flag_mg</item>
+        <item>@drawable/flag_mw</item>
+        <item>@drawable/flag_my</item>
+        <item>@drawable/flag_mv</item>
+        <item>@drawable/flag_ml</item>
+        <item>@drawable/flag_mt</item>
+        <item>@drawable/flag_mr</item>
+        <item>@drawable/flag_mx</item>
+        <item>@drawable/flag_md</item>
+        <item>@drawable/flag_mn</item>
+        <item>@drawable/flag_ma</item>
+        <item>@drawable/flag_mz</item>
+        <item>@drawable/flag_na</item>
+        <item>@drawable/flag_np</item>
+        <item>@drawable/flag_nl</item>
+        <item>@drawable/flag_nz</item>
+        <item>@drawable/flag_ni</item>
+        <item>@drawable/flag_ne</item>
+        <item>@drawable/flag_ng</item>
+        <item>@drawable/flag_kp</item>
         <item>@drawable/flag_no</item>
+        <item>@drawable/flag_om</item>
+        <item>@drawable/flag_pk</item>
+        <item>@drawable/flag_pa</item>
+        <item>@drawable/flag_py</item>
+        <item>@drawable/flag_pe</item>
+        <item>@drawable/flag_ph</item>
+        <item>@drawable/flag_pl</item>
+        <item>@drawable/flag_pt</item>
+        <item>@drawable/flag_pr</item>
+        <item>@drawable/flag_qa</item>
+        <item>@drawable/flag_gn</item>
+        <item>@drawable/flag_ro</item>
+        <item>@drawable/flag_ru</item>
+        <item>@drawable/flag_rw</item>
+        <item>@drawable/flag_sa</item>
+        <item>@drawable/flag_gb</item>
+        <item>@drawable/flag_sn</item>
+        <item>@drawable/flag_rs</item>
+        <item>@drawable/flag_sl</item>
+        <item>@drawable/flag_sk</item>
+        <item>@drawable/flag_si</item>
+        <item>@drawable/flag_so</item>
+        <item>@drawable/flag_za</item>
+        <item>@drawable/flag_kr</item>
+        <item>@drawable/flag_lk</item>
+        <item>@drawable/flag_sd</item>
+        <item>@drawable/flag_sr</item>
+        <item>@drawable/flag_sz</item>
+        <item>@drawable/flag_se</item>
+        <item>@drawable/flag_ch</item>
+        <item>@drawable/flag_sy</item>
+        <item>@drawable/flag_tj</item>
+        <item>@drawable/flag_tz</item>
+        <item>@drawable/flag_th</item>
+        <item>@drawable/flag_tg</item>
+        <item>@drawable/flag_tt</item>
+        <item>@drawable/flag_tn</item>
+        <item>@drawable/flag_tr</item>
+        <item>@drawable/flag_tm</item>
+        <item>@drawable/flag_ug</item>
+        <item>@drawable/flag_ua</item>
+        <item>@drawable/flag_uy</item>
+        <item>@drawable/flag_uz</item>
+        <item>@drawable/flag_ve</item>
+        <item>@drawable/flag_vn</item>
+        <item>@drawable/flag_ma</item>
+        <item>@drawable/flag_ye</item>
+        <item>@drawable/flag_zm</item>
+        <item>@drawable/flag_zw</item>
+        <item>@drawable/flag_us</item>
         <item>@drawable/flag_fr</item>
+        <item>@drawable/flag_es</item>
+        -->
     </string-array>
 
 </resources>
