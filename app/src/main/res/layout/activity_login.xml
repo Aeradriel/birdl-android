@@ -16,9 +16,10 @@
         android:id="@+id/user_pwd"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/user_email"
-        android:hint="@string/pass_usr" />
+        android:hint="@string/pass_usr"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -29,12 +30,12 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:hint="@string/email_usr"
-        android:layout_above="@+id/user_pwd"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="44dp" />
+        android:layout_below="@+id/imageView2"
+        android:layout_alignStart="@+id/user_pwd"
+        android:layout_marginTop="39dp" />
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        style="?android:attr/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/connect_fr"
@@ -45,7 +46,7 @@
 
 
     <Button
-        style="?android:attr/buttonStyleSmall"
+        style="?android:attr/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sign_up_login"
@@ -70,11 +71,21 @@
         android:layout_height="wrap_content"
         android:text="@string/register_session"
         android:id="@+id/remember_logs"
-        android:layout_marginTop="30dp"
         android:checked="false"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:layout_below="@+id/connect_button"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#009999"
+        android:text="@string/othersign"
+        android:id="@+id/othersign"
+        android:layout_marginBottom="31dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

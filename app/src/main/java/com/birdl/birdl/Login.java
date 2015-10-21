@@ -29,20 +29,18 @@ import retrofit.client.Header;
 import retrofit.client.Response;
 import retrofit.http.HEAD;
 
-
 public class Login extends Activity {
-
     private static EditText username;
     private static EditText password;
     private static Button login;
     private static Button sign_up;
+    private static Button others;
     static int i = 0;
     static UserInformationStatic InformationStatic;
     static AllEventResponseStatic allEventResponseStatic;
     static AllEventInformationStatic allEventInformationStatic;
     public RestAdapter restAdapterHeader;
     public RequestInterceptor requestInterceptor;
-
     public static String getPasswordToString(){
         return password.getText().toString();
     }
@@ -59,6 +57,7 @@ public class Login extends Activity {
         password = (EditText) findViewById(R.id.user_pwd);
         login = (Button) findViewById(R.id.connect_button);
         sign_up = (Button) findViewById(R.id.sign_up);
+        others = (Button) findViewById(R.id.othersign);
         final RetrofitError error;
 
         login.setOnClickListener(
@@ -70,7 +69,7 @@ public class Login extends Activity {
                             @Override
                             public void run() {
                                 final RestAdapter restAdapter = new RestAdapter.Builder()
-                                        .setEndpoint("http://163.5.84.208:3000/")
+                                        .setEndpoint("http://birdl.xyz:3000/")
                                         .build();
 
                                 RestLogin api = restAdapter.create(RestLogin.class);
@@ -86,7 +85,7 @@ public class Login extends Activity {
                                             }
                                         };
 
-                                        restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                        restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://birdl.xyz:3000/")
                                                 .setRequestInterceptor(requestInterceptor)
                                                 .setLogLevel(RestAdapter.LogLevel.FULL)
                                                 .setLog(new AndroidLog("log retrofit"))
@@ -108,7 +107,7 @@ public class Login extends Activity {
                                                         password.getText().toString());
 
                                                 //fill event information class
-                                                RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                                                RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://birdl.xyz:3000/")
                                                        .setRequestInterceptor(requestInterceptor)
                                                        .setLogLevel(RestAdapter.LogLevel.FULL)
                                                        .setLog(new AndroidLog("log retrofit"))
@@ -168,7 +167,6 @@ public class Login extends Activity {
                     }
                 });
 
-
         sign_up.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -179,10 +177,14 @@ public class Login extends Activity {
             }
         );
 
+        others.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, GoogleSignIn.class);
+                startActivity(intent);
+            }
+        });
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -197,14 +199,10 @@ public class Login extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
 }

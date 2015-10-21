@@ -93,6 +93,7 @@
     <string name="register_session">Enregistrer sa session</string>
     <string name="email_usr">Adresse mail</string>
     <string name="pass_usr">Mot de passe</string>
+    <string name="othersign">Vous avez un compte Google+ ou Facebook ?</string>
 
     <!-- COUNTRY LIST -->
     <string-array name="country_names">

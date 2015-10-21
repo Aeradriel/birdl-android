@@ -87,7 +87,7 @@ public class SignUp extends Activity {
                             @Override
                             public void run() {
                                 RestAdapter restAdapter = new RestAdapter.Builder()
-                                        .setEndpoint("http://163.5.84.208:3000/")
+                                        .setEndpoint("http://birdl.xyz:3000/")
                                         .build();
 
                                 RestRegister restRegister = restAdapter.create(RestRegister.class);
@@ -129,7 +129,7 @@ public class SignUp extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             countryCode = data.getStringExtra(CountrycodeActivity.RESULT_COUNTRYCODE);
-            Toast.makeText(this, "Vous avez choisi: " + countryCode, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Vous avez choisi: " + countryCode, Toast.LENGTH_LONG).show();
         }
     }
 
