@@ -86,7 +86,7 @@ public class SetProfilActivity extends Activity {
         };
 
          RestAdapter adapter = new RestAdapter.Builder()
-                .setEndpoint("http://163.5.84.208:3000/")
+                .setEndpoint("http://birdl.xyz:3000/")
                 .setRequestInterceptor(requestInterceptor)
                 .setLogLevel(RestAdapter.LogLevel.FULL)
                 .setLog(new AndroidLog("log retrofit"))

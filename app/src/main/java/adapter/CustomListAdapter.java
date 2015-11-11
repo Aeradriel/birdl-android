@@ -1,6 +1,7 @@
 package adapter;
 
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,17 +13,24 @@ import com.birdl.birdl.R;
 import java.util.ArrayList;
 
 import model.AllEventInformationStatic;
+import model.AllInboxInformationStatic;
 
 /**
  * Created by Christophe on 22/09/2015.
  */
 public class CustomListAdapter extends BaseAdapter {
     private ArrayList<AllEventInformationStatic> listEvent;
+    private ArrayList<AllInboxInformationStatic> listInbox;
     private LayoutInflater layoutInflater;
 
     public CustomListAdapter(Context aContext, ArrayList<AllEventInformationStatic> listData) {
         this.listEvent = listData;
         layoutInflater = LayoutInflater.from(aContext);
+    }
+
+    public CustomListAdapter(FragmentActivity activity, ArrayList<AllInboxInformationStatic> inbox) {
+        this.listInbox = inbox;
+        layoutInflater = LayoutInflater.from(activity);
     }
 
     @Override

@@ -6,8 +6,7 @@
     android:background="@drawable/color18">
 
     <ListView
-        android:id="@android:id/list"
+        android:id="@+id/inbox_msg"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>
