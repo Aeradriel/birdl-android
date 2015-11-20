@@ -94,6 +94,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".EventDetailActivity">
+            <intent-filter>
+                <action android:name="com.birdl.birdl.EventDetailActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Confirmation"
             android:label="Une dernière étape..." >
             <intent-filter>

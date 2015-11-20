@@ -18,4 +18,8 @@
     <string name="register_session">Enregistrer sa session</string>
     <string name="email_usr">Adresse mail</string>
     <string name="pass_usr">Mot de passe</string>
+    <!-- Setting activity -->
+    <string name="get_notifier">Get notifications</string>
+    <string name="application_language">Application language</string>
+    <string name="submit_settings">SUBMIT</string>
 </resources>

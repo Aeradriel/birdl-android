@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.birdl.birdl.R;
+import com.birdl.birdl.SettingsActivity;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,11 +42,43 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         NavDrawerItem current = data.get(position);
-        String home = "Home";
-        String new_message = "Create message";
-        String inbox = "Inbox";
-        String event = "Event";
-        String disconnect = "Disconnect";
+        String home = null;
+        String new_message = null;
+        String inbox = null;
+        String event = null;
+        String disconnect = null;
+        if (SettingsActivity.application_language_selection.equals("English"))
+        {
+            home = "Home";
+            new_message = "Create message";
+            inbox = "Inbox";
+            event = "Event";
+            disconnect = "Disconnect";
+        }
+        else if (SettingsActivity.application_language_selection.equals("French"))
+        {
+            home = "Accueil";
+            new_message = "Nouveau message";
+            inbox = "Boite de réception";
+            event = "Evenements";
+            disconnect = "Déconnecter";
+        }
+        else if (SettingsActivity.application_language_selection.equals("Spanish"))
+        {
+            home = "Página principal";
+            new_message = "Nuevo mensaje";
+            inbox = "Bandeja de entrada";
+            event = "Eventos";
+            disconnect = "Desconectar";
+        }
+        else if (SettingsActivity.application_language_selection.equals("Italian"))
+        {
+            home = "Pagina iniziale";
+            new_message = "Nuovi Messaggi";
+            inbox = "Posta in arrivo";
+            event = "Eventi";
+            disconnect = "Disconnessione";
+        }
         holder.title.setText(current.getTitle());
         if (current.getTitle().equals(home))
         {

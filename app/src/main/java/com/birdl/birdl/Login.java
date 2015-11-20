@@ -69,7 +69,9 @@ public class Login extends Activity {
                             @Override
                             public void run() {
                                 final RestAdapter restAdapter = new RestAdapter.Builder()
-                                        .setEndpoint("http://birdl.xyz:3000/")
+                                        .setEndpoint("http://163.5.84.208:3000/")
+                                        .setLogLevel(RestAdapter.LogLevel.FULL)
+                                        .setLog(new AndroidLog("log retrofit"))
                                         .build();
 
                                 RestLogin api = restAdapter.create(RestLogin.class);
@@ -85,7 +87,7 @@ public class Login extends Activity {
                                             }
                                         };
 
-                                        restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://birdl.xyz:3000/")
+                                        restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
                                                 .setRequestInterceptor(requestInterceptor)
                                                 .setLogLevel(RestAdapter.LogLevel.FULL)
                                                 .setLog(new AndroidLog("log retrofit"))
@@ -107,7 +109,7 @@ public class Login extends Activity {
                                                         password.getText().toString());
 
                                                 //fill event information class
-                                                RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://birdl.xyz:3000/")
+                                                RestAdapter eventInformation = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
                                                        .setRequestInterceptor(requestInterceptor)
                                                        .setLogLevel(RestAdapter.LogLevel.FULL)
                                                        .setLog(new AndroidLog("log retrofit"))

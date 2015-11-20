@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -19,6 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.birdl.birdl.R;
+import com.birdl.birdl.SettingsActivity;
+
 import adapter.NavigationDrawerAdapter;
 import model.NavDrawerItem;
 
@@ -62,7 +65,14 @@ public class FragmentDrawer extends Fragment {
         super.onCreate(savedInstanceState);
 
         // drawer labels
-        titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
+        if (SettingsActivity.application_language_selection.equals("English"))
+            titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels);
+        else if (SettingsActivity.application_language_selection.equals("French"))
+            titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_fr);
+        else if (SettingsActivity.application_language_selection.equals("Spanish"))
+            titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_sp);
+        else if (SettingsActivity.application_language_selection.equals("Italian"))
+            titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_it);
     }
 
     @Override

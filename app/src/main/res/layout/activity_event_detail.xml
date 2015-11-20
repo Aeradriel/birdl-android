@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:weightSum="1">
+    android:background="@drawable/color18">
 
     <include
+
         layout="@layout/toolbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -16,57 +15,18 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="10sp"
         android:layout_marginTop="15dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/first_name_profile"
+            android:text="Event name"
             android:textSize="21sp"
-            android:id="@+id/FirstName" />
+            android:id="@+id/EventName" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/FirstNameField"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="15dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/last_name_profile"
-            android:textSize="21sp"
-            android:id="@+id/LastName" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/LastNameField"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="15dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/birthdate_profile"
-            android:textSize="21sp"
-            android:id="@+id/Birhtdate" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/BirthdateField"
+            android:id="@+id/EventNameField"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -74,19 +34,56 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="10sp"
         android:layout_marginTop="15dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email_profile"
+            android:text="Event type"
             android:textSize="21sp"
-            android:id="@+id/Email" />
+            android:id="@+id/EventType" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/EmailField"
+            android:id="@+id/EventTypeField"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="15dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Language"
+        android:textSize="21sp"
+        android:id="@+id/EventLanguage" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/EventLanguageField"
+        android:layout_weight="1" />
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:textSize="21sp"
+            android:id="@+id/Location" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LocationField"
             android:layout_weight="1" />
     </LinearLayout>
 
@@ -94,47 +91,57 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginLeft="10sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/picture_profile"
+            android:text="Max slots"
             android:textSize="21sp"
-            android:layout_marginTop="5sp"
-            android:id="@+id/Picture" />
+            android:id="@+id/MaxSlots" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/MaxSlotsField"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textSize="21sp"
+            android:id="@+id/Desc" />
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/DescField"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="20dp"
+        >
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textSize="20sp"
-            android:layout_marginLeft="30sp"
-            android:text="@string/browse_picture"
+            android:textSize="28sp"
+            android:text="S'inscrire"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimary"
-            android:id="@+id/buttonBrowsePic"
-            android:layout_gravity="center_horizontal"/>
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="180dp"
-            android:layout_marginLeft="30dp"
-            android:src="@drawable/ic_profile"
-            android:id="@+id/setImageProfil" />
+            android:id="@+id/buttonSubscribe"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:textSize="28sp"
-        android:layout_marginTop="-20sp"
-        android:text="@string/submit_profile"
-        android:textColor="@android:color/white"
-        android:background="@color/colorPrimary"
-        android:id="@+id/buttonSubmit"
-        android:layout_gravity="center_horizontal" />
 
 </LinearLayout>

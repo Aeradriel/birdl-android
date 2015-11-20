@@ -7,6 +7,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +36,8 @@ import retrofit.android.AndroidLog;
 import retrofit.client.Response;
 
 public class SetProfilActivity extends Activity {
+
+    Toolbar customtoolbar;
     private ImageView profilPic;
     private Button pickImage;
     RestUserInformation start;
@@ -53,6 +57,17 @@ public class SetProfilActivity extends Activity {
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.set_profil_activity);
+        BindViews();
+
+        customtoolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        customtoolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent("com.birdl.birdl.action.menu");
+                startActivity(intent);
+            }
+        });
 
         FirstNameField = (EditText) findViewById(R.id.FirstNameField);
         FirstNameField.setText(FirstNameModif);
@@ -101,6 +116,7 @@ public class SetProfilActivity extends Activity {
                 final String query = "{\"email\":\"" + EmailField.getText().toString() + "\"" + ",\"first_name\":\"" + FirstNameField.getText().toString() + "\"" + ",\"last_name\":\"" +
                         LastNameField.getText().toString() + "\"" + ",\"birthdate\":\"" +
                         BirthdateField.getText().toString().replace('-', '/') + "\"" + "}";
+                Log.i("query", query);
                 getUserInfo.setInfo(pass, query, new Callback<UserResponse>() {
                     @Override
                     public void success(UserResponse userResponse, Response response) {
@@ -137,6 +153,46 @@ public class SetProfilActivity extends Activity {
                         e.printStackTrace();
                     }
                 }
+        }
+    }
+
+    protected void BindViews()
+    {
+        if (SettingsActivity.application_language_selection.equals("English")) {
+            ((TextView) findViewById(R.id.FirstName)).setText(R.string.first_name_profile);
+            ((TextView) findViewById(R.id.LastName)).setText(R.string.last_name_profile);
+            ((TextView) findViewById(R.id.Birhtdate)).setText(R.string.birthdate_profile);
+            ((TextView) findViewById(R.id.Email)).setText(R.string.email_profile);
+            ((TextView) findViewById(R.id.Picture)).setText(R.string.picture_profile);
+            ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture);
+            ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile);
+        }
+        else if (SettingsActivity.application_language_selection.equals("French")) {
+            ((TextView) findViewById(R.id.FirstName)).setText(R.string.first_name_profile_fr);
+            ((TextView) findViewById(R.id.LastName)).setText(R.string.last_name_profile_fr);
+            ((TextView) findViewById(R.id.Birhtdate)).setText(R.string.birthdate_profile_fr);
+            ((TextView) findViewById(R.id.Email)).setText(R.string.email_profile_fr);
+            ((TextView) findViewById(R.id.Picture)).setText(R.string.picture_profile_fr);
+            ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture_fr);
+            ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile_fr);
+        }
+        else if (SettingsActivity.application_language_selection.equals("Spanish")) {
+            ((TextView) findViewById(R.id.FirstName)).setText(R.string.first_name_profile_sp);
+            ((TextView) findViewById(R.id.LastName)).setText(R.string.last_name_profile_sp);
+            ((TextView) findViewById(R.id.Birhtdate)).setText(R.string.birthdate_profile_sp);
+            ((TextView) findViewById(R.id.Email)).setText(R.string.email_profile_sp);
+            ((TextView) findViewById(R.id.Picture)).setText(R.string.picture_profile_sp);
+            ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture_sp);
+            ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile_sp);
+        }
+        else if (SettingsActivity.application_language_selection.equals("Italian")) {
+            ((TextView) findViewById(R.id.FirstName)).setText(R.string.first_name_profile_it);
+            ((TextView) findViewById(R.id.LastName)).setText(R.string.last_name_profile_it);
+            ((TextView) findViewById(R.id.Birhtdate)).setText(R.string.birthdate_profile_it);
+            ((TextView) findViewById(R.id.Email)).setText(R.string.email_profile_it);
+            ((TextView) findViewById(R.id.Picture)).setText(R.string.picture_profile_it);
+            ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture_it);
+            ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile_it);
         }
     }
 

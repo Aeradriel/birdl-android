@@ -9,9 +9,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -24,6 +26,8 @@ import com.birdl.birdl.SetProfilActivity;
 
 import model.AllEventResponseStatic;
 import model.UserInformationStatic;
+
+import com.birdl.birdl.SettingsActivity;
 import com.birdl.birdl.SlidingEventLayout;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener{
@@ -90,6 +94,24 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        if (SettingsActivity.application_language_selection.equals("English")) {
+            menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl);
+            menu.findItem(R.id.action_settings).setTitle(R.string.action_settings);
+        }
+        else if (SettingsActivity.application_language_selection.equals("French")) {
+            menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl_fr);
+            menu.findItem(R.id.action_settings).setTitle(R.string.action_settings_fr);
+        }
+        else if (SettingsActivity.application_language_selection.equals("Spanish")) {
+            menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl_sp);
+            menu.findItem(R.id.action_settings).setTitle(R.string.action_settings_sp);
+        }
+        else if (SettingsActivity.application_language_selection.equals("Italian")) {
+            menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl_it);
+            menu.findItem(R.id.action_settings).setTitle(R.string.action_settings_it);
+        }
+
         return true;
     }
 
@@ -122,23 +144,44 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
         switch (position) {
             case 0:
                 fragment = new HomeActivity();
-                title = getString(R.string.title_home);
+                if (SettingsActivity.application_language_selection.equals("English"))
+                    title = getString(R.string.title_home);
+                else if (SettingsActivity.application_language_selection.equals("French"))
+                    title = getString(R.string.title_home_fr);
+                else if (SettingsActivity.application_language_selection.equals("Spanish"))
+                    title = getString(R.string.title_home_sp);
+                else if (SettingsActivity.application_language_selection.equals("Italian"))
+                    title = getString(R.string.title_home_it);
                 break;
             case 1:
                 fragment = new NewMessageActivity();
-                title = getString(R.string.new_message);
+                if (SettingsActivity.application_language_selection.equals("English"))
+                    title = getString(R.string.new_message);
+                else if (SettingsActivity.application_language_selection.equals("French"))
+                    title = getString(R.string.new_message_fr);
+                else if (SettingsActivity.application_language_selection.equals("Spanish"))
+                    title = getString(R.string.new_message_sp);
+                else if (SettingsActivity.application_language_selection.equals("Italian"))
+                    title = getString(R.string.new_message_it);
                 break;
             case 2:
                 fragment = new InboxActivity();
-                title = getString(R.string.inbox);
+                if (SettingsActivity.application_language_selection.equals("English"))
+                    title = getString(R.string.inbox);
+                else if (SettingsActivity.application_language_selection.equals("French"))
+                    title = getString(R.string.inbox_fr);
+                else if (SettingsActivity.application_language_selection.equals("Spanish"))
+                    title = getString(R.string.inbox_sp);
+                else if (SettingsActivity.application_language_selection.equals("Italian"))
+                    title = getString(R.string.inbox_it);
                 break;
             case 3:
-                Intent intent2 = new Intent(this, SlidingEventLayout.class);
-                startActivity(intent2);
+                Intent intent = new Intent("com.birdl.birdl.SlidingEventLayout");
+                startActivity(intent);
                 break;
             case 4:
-                Intent intent = new Intent(this, Login.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(this, Login.class);
+                startActivity(intent2);
                 break;
             default:
                 break;

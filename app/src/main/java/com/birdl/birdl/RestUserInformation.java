@@ -1,12 +1,10 @@
 package com.birdl.birdl;
 
-import model.UserInformation;
 import model.UserResponse;
 import retrofit.Callback;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
-import retrofit.http.Headers;
 import retrofit.http.POST;
 
 /**
