@@ -79,6 +79,14 @@ public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDraw
             event = "Eventi";
             disconnect = "Disconnessione";
         }
+        else if (SettingsActivity.application_language_selection.equals("German"))
+        {
+            home = "Startseite";
+            new_message = "Neue Beiträge";
+            inbox = "Eingang";
+            event = "Geschehen";
+            disconnect = "Ausloggen";
+        }
         holder.title.setText(current.getTitle());
         if (current.getTitle().equals(home))
         {

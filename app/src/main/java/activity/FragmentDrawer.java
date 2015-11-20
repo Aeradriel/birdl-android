@@ -73,6 +73,8 @@ public class FragmentDrawer extends Fragment {
             titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_sp);
         else if (SettingsActivity.application_language_selection.equals("Italian"))
             titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_it);
+        else if (SettingsActivity.application_language_selection.equals("German"))
+            titles = getActivity().getResources().getStringArray(R.array.nav_drawer_labels_ge);
     }
 
     @Override

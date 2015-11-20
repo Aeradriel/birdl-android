@@ -10,8 +10,6 @@
     android:weightSum="1"
     android:background="@android:color/white">
 
-
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -141,7 +139,8 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:id="@+id/starting_date_field"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:hint="jj/mm/yyyy" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -160,7 +159,8 @@
             android:layout_height="wrap_content"
             android:inputType="date"
             android:id="@+id/ending_date_field"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:hint="jj/mm/yyyy" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"

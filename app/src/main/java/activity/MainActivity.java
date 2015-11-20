@@ -111,6 +111,10 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl_it);
             menu.findItem(R.id.action_settings).setTitle(R.string.action_settings_it);
         }
+        else if (SettingsActivity.application_language_selection.equals("German")) {
+            menu.findItem(R.id.action_about).setTitle(R.string.action_about_birdl_ge);
+            menu.findItem(R.id.action_settings).setTitle(R.string.action_settings_ge);
+        }
 
         return true;
     }
@@ -152,6 +156,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     title = getString(R.string.title_home_sp);
                 else if (SettingsActivity.application_language_selection.equals("Italian"))
                     title = getString(R.string.title_home_it);
+                else if (SettingsActivity.application_language_selection.equals("German"))
+                    title = getString(R.string.title_home_ge);
                 break;
             case 1:
                 fragment = new NewMessageActivity();
@@ -163,6 +169,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     title = getString(R.string.new_message_sp);
                 else if (SettingsActivity.application_language_selection.equals("Italian"))
                     title = getString(R.string.new_message_it);
+                else if (SettingsActivity.application_language_selection.equals("German"))
+                    title = getString(R.string.new_message_ge);
                 break;
             case 2:
                 fragment = new InboxActivity();
@@ -174,6 +182,8 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                     title = getString(R.string.inbox_sp);
                 else if (SettingsActivity.application_language_selection.equals("Italian"))
                     title = getString(R.string.inbox_it);
+                else if (SettingsActivity.application_language_selection.equals("German"))
+                    title = getString(R.string.inbox_ge);
                 break;
             case 3:
                 Intent intent = new Intent("com.birdl.birdl.SlidingEventLayout");

@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -59,6 +60,11 @@ public class SettingsActivity extends Activity {
         get_notification = (TextView) findViewById(R.id.get_notification);
         application_language = (TextView) findViewById(R.id.application_language);
 
+
+        ArrayAdapter myAdap = (ArrayAdapter) spinner_language.getAdapter();
+        int spinnerPosition = myAdap.getPosition(application_language_selection);
+        spinner_language.setSelection(spinnerPosition);
+
         spinner_language.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View arg1,
                                        int arg2, long arg3) {
@@ -86,6 +92,12 @@ public class SettingsActivity extends Activity {
                     ((TextView)findViewById(R.id.get_notification)).setText(R.string.get_notifier_it);
                     ((TextView)findViewById(R.id.application_language)).setText(R.string.application_language_it);
                     ((Button)findViewById(R.id.submit_setting)).setText(R.string.submit_settings_it);
+                }
+                else if (application_language_selection.equals("German"))
+                {
+                    ((TextView)findViewById(R.id.get_notification)).setText(R.string.get_notifier_ge);
+                    ((TextView)findViewById(R.id.application_language)).setText(R.string.application_language_ge);
+                    ((Button)findViewById(R.id.submit_setting)).setText(R.string.submit_settings_ge);
                 }
             }
 

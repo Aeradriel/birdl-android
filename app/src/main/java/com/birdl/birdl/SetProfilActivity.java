@@ -194,6 +194,15 @@ public class SetProfilActivity extends Activity {
             ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture_it);
             ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile_it);
         }
+        else if (SettingsActivity.application_language_selection.equals("German")) {
+            ((TextView) findViewById(R.id.FirstName)).setText(R.string.first_name_profile_ge);
+            ((TextView) findViewById(R.id.LastName)).setText(R.string.last_name_profile_ge);
+            ((TextView) findViewById(R.id.Birhtdate)).setText(R.string.birthdate_profile_ge);
+            ((TextView) findViewById(R.id.Email)).setText(R.string.email_profile_ge);
+            ((TextView) findViewById(R.id.Picture)).setText(R.string.picture_profile_ge);
+            ((Button) findViewById(R.id.buttonBrowsePic)).setText(R.string.browse_picture_ge);
+            ((Button) findViewById(R.id.buttonSubmit)).setText(R.string.submit_profile_ge);
+        }
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
