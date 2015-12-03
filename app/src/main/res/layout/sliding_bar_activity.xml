@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SlidingEventLayout">
+    tools:context="slidingBarEvent.SlidingEventLayout">
 
     <include
 
@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         />
 
-    <slidingBar.SlidingTabLayout
+    <slidingBarEvent.SlidingTabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

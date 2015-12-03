@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.birdl.birdl.R;
+import com.birdl.activity.R;
 
 import java.util.ArrayList;
 
-import model.AllEventInformationStatic;
-import model.AllInboxInformationStatic;
+import config.AllEventInformationStatic;
+import config.AllInboxInformationStatic;
 
 /**
  * Created by Christophe on 22/09/2015.

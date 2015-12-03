@@ -8,13 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.birdl.birdl.R;
-import com.birdl.birdl.SettingsActivity;
+import com.birdl.activity.R;
+import com.birdl.activity.SettingsActivity;
 
 import java.util.Collections;
 import java.util.List;
-
-import model.NavDrawerItem;
 
 public class NavigationDrawerAdapter extends RecyclerView.Adapter<NavigationDrawerAdapter.MyViewHolder> {
     List<NavDrawerItem> data = Collections.emptyList();
