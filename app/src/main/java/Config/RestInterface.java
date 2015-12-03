@@ -1,6 +1,7 @@
 package config;
 
 import retrofitInterface.RestEventInterface;
+import retrofitInterface.RestMessageInterface;
 import retrofitInterface.RestUserInterface;
 
 /**
@@ -10,6 +11,7 @@ import retrofitInterface.RestUserInterface;
 public class RestInterface {
     private static RestUserInterface REST_USER;
     private static RestEventInterface REST_EVENT;
+    private static RestMessageInterface REST_MESSAGE;
 
     public static RestUserInterface getUserInterface() {
         return REST_USER;
@@ -28,5 +30,7 @@ public class RestInterface {
             REST_USER = userNetwork.getRestAdapterHeader().create(RestUserInterface.class);
         else if (buildInterface.equals("event"))
             REST_EVENT = userNetwork.getRestAdapterHeader().create(RestEventInterface.class);
+        else if (buildInterface.equals("messaging"))
+            REST_MESSAGE = userNetwork.getRestAdapterHeader().create(RestMessageInterface.class);
     }
 }
