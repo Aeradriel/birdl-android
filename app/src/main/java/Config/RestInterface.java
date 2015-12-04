@@ -21,6 +21,10 @@ public class RestInterface {
         return REST_EVENT;
     }
 
+    public static RestMessageInterface getMessageInterface() {
+        return REST_MESSAGE;
+    }
+
     public RestInterface(BirdlConfigNetwork userNetwork, String buildInterface)
     {
         userNetwork.setRequestInterceptor();
@@ -30,7 +34,7 @@ public class RestInterface {
             REST_USER = userNetwork.getRestAdapterHeader().create(RestUserInterface.class);
         else if (buildInterface.equals("event"))
             REST_EVENT = userNetwork.getRestAdapterHeader().create(RestEventInterface.class);
-        else if (buildInterface.equals("messaging"))
+        else if (buildInterface.equals("message"))
             REST_MESSAGE = userNetwork.getRestAdapterHeader().create(RestMessageInterface.class);
     }
 }
