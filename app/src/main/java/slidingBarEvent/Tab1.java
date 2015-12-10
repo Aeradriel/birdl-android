@@ -14,15 +14,15 @@ import android.widget.Toast;
 import com.birdl.activity.EventDetailActivity;
 import com.birdl.activity.R;
 
-import config.BirdlConfigNetwork;
-import config.RestInterface;
+import configBirdl.BirdlConfigNetwork;
+import configBirdl.RestInterface;
 
 import java.util.ArrayList;
 
 import adapter.CustomListAdapter;
-import config.AllEventInformationStatic;
-import config.AllEventResponse;
-import config.AllEventResponseStatic;
+import configBirdl.AllEventInformationStatic;
+import configBirdl.AllEventResponse;
+import configBirdl.AllEventResponseStatic;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;

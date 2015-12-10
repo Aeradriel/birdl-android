@@ -1,6 +1,6 @@
-package retrofitInterface;
+package interfaceRetrofit;
 
-import config.AllEventResponse;
+import configBirdl.AllEventResponse;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.Field;

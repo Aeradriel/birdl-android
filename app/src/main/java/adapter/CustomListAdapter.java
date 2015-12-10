@@ -12,8 +12,8 @@ import com.birdl.activity.R;
 
 import java.util.ArrayList;
 
-import config.AllEventInformationStatic;
-import config.AllInboxInformationStatic;
+import configBirdl.AllEventInformationStatic;
+import configBirdl.AllInboxInformationStatic;
 
 /**
  * Created by Christophe on 22/09/2015.

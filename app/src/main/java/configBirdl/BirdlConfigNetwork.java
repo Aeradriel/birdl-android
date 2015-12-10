@@ -1,4 +1,4 @@
-package config;
+package configBirdl;
 
 import com.birdl.activity.SessionInformation;
 

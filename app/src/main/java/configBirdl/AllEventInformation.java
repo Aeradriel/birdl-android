@@ -1,4 +1,4 @@
-package config;
+package configBirdl;
 
 import com.google.gson.annotations.SerializedName;
 

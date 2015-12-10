@@ -10,7 +10,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import adapter.CustomListAdapter;
-import config.AllInboxResponseStatic;
+import configBirdl.AllInboxResponseStatic;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
 import retrofit.android.AndroidLog;

@@ -1,8 +1,8 @@
-package retrofitInterface;
+package interfaceRetrofit;
 
-import config.LoginResponse;
+import configBirdl.LoginResponse;
 
-import config.UserResponse;
+import configBirdl.UserResponse;
 import retrofit.Callback;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;

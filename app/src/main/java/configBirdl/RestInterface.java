@@ -1,8 +1,8 @@
-package config;
+package configBirdl;
 
-import retrofitInterface.RestEventInterface;
-import retrofitInterface.RestMessageInterface;
-import retrofitInterface.RestUserInterface;
+import interfaceRetrofit.RestEventInterface;
+import interfaceRetrofit.RestMessageInterface;
+import interfaceRetrofit.RestUserInterface;
 
 /**
  * Created by Serkan on 12/07/2015.

@@ -19,9 +19,9 @@ import android.widget.Toast;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-import config.RestInterface;
-import retrofitInterface.RestUserInterface;
-import config.UserResponse;
+import configBirdl.RestInterface;
+import interfaceRetrofit.RestUserInterface;
+import configBirdl.UserResponse;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;

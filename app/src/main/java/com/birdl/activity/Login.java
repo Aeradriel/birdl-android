@@ -12,12 +12,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import config.BirdlConfigNetwork;
-import config.LoginResponse;
-import config.RestInterface;
-import retrofitInterface.RestUserInterface;
-import config.UserInformationStatic;
-import config.UserResponse;
+import configBirdl.BirdlConfigNetwork;
+import configBirdl.LoginResponse;
+import configBirdl.RestInterface;
+import interfaceRetrofit.RestUserInterface;
+import configBirdl.UserInformationStatic;
+import configBirdl.UserResponse;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Header;

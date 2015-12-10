@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.birdl.activity.R;
-import retrofitInterface.RestEventInterface;
+import interfaceRetrofit.RestEventInterface;
 import com.birdl.activity.SessionInformation;
 
 import retrofit.Callback;

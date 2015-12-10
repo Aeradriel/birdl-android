@@ -1,4 +1,4 @@
-package config;
+package configBirdl;
 
 /**
  * Created by Serkan on 11/11/2015.

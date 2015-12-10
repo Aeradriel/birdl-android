@@ -1,13 +1,11 @@
-package retrofitInterface;
+package interfaceRetrofit;
 
-import config.AllEventResponse;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.POST;
-import retrofit.http.Path;
 
 /**
  * Created by Christophe on 03/12/2015.

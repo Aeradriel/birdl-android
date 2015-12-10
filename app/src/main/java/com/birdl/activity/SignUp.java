@@ -12,9 +12,9 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import config.BirdlConfigNetwork;
-import config.LoginResponse;
-import retrofitInterface.RestUserInterface;
+import configBirdl.BirdlConfigNetwork;
+import configBirdl.LoginResponse;
+import interfaceRetrofit.RestUserInterface;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;

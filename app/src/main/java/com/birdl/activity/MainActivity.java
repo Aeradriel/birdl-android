@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import config.UserInformationStatic;
+import configBirdl.UserInformationStatic;
 import fragment.FragmentDrawer;
 
 public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {

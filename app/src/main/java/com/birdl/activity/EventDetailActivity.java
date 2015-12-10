@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import retrofitInterface.RestEventInterface;
-import config.AllEventResponseStatic;
+import interfaceRetrofit.RestEventInterface;
+import configBirdl.AllEventResponseStatic;
 import retrofit.Callback;
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
