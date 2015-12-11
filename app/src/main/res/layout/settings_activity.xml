@@ -50,8 +50,7 @@
         android:id="@+id/spinner_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:entries="@array/country_arrays"
-        android:prompt="@string/country_prompt" />
+        android:entries="@array/country_arrays" />
     </LinearLayout>
 
     <Button

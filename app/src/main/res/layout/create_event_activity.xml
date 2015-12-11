@@ -44,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/event_type"
-            android:prompt="@string/event_prompt"
             android:layout_marginLeft="10dp"
             android:id="@+id/spinner_event_type" />
     </LinearLayout>
@@ -52,19 +51,19 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        >
+        android:layout_marginTop="20dp" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Language"
             android:textSize="21sp"
             android:id="@+id/language" />
-        <EditText
+        <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/language_field"
-            android:layout_weight="1"/>
+            android:layout_marginLeft="10dp"
+            android:entries="@array/country_arrays"
+            android:id="@+id/spinner_event_language_create" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -140,7 +139,7 @@
             android:inputType="date"
             android:id="@+id/starting_date_field"
             android:layout_weight="1"
-            android:hint="jj/mm/yyyy" />
+            android:hint="yyyy/mm/jj" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"
@@ -160,7 +159,7 @@
             android:inputType="date"
             android:id="@+id/ending_date_field"
             android:layout_weight="1"
-            android:hint="jj/mm/yyyy" />
+            android:hint="yyyy/mm/jj" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="fill_parent"

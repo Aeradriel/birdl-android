@@ -54,7 +54,8 @@ public class CustomListAdapter extends BaseAdapter {
             convertView = layoutInflater.inflate(R.layout.list_row_layout_event, null);
             holder = new ViewHolder();
             holder.headlineView = (TextView) convertView.findViewById(R.id.title);
-            holder.reporterNameView = (TextView) convertView.findViewById(R.id.reporter);
+            holder.reporterNameView = (TextView) convertView.findViewById(R.id.language_event);
+            holder.reporterFreeSlots = (TextView) convertView.findViewById(R.id.free_slots);
             holder.reportedDateView = (TextView) convertView.findViewById(R.id.date);
             convertView.setTag(holder);
         } else {
@@ -62,7 +63,8 @@ public class CustomListAdapter extends BaseAdapter {
         }
 
         holder.headlineView.setText(listEvent.get(position).getName());
-        holder.reporterNameView.setText("By: " + listEvent.get(position).getDesc());
+        holder.reporterNameView.setText("Language: " + listEvent.get(position).getLanguage());
+        holder.reporterFreeSlots.setText("Free slots: " + listEvent.get(position).getFree_slots());
         holder.reportedDateView.setText(listEvent.get(position).getDate());
         return convertView;
     }
@@ -70,6 +72,7 @@ public class CustomListAdapter extends BaseAdapter {
     static class ViewHolder {
         TextView headlineView;
         TextView reporterNameView;
+        TextView reporterFreeSlots;
         TextView reportedDateView;
     }
 }

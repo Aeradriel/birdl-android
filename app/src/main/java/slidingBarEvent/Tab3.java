@@ -24,9 +24,10 @@ import retrofit.android.AndroidLog;
 import retrofit.client.Response;
 
 public class Tab3 extends Fragment {
+    private View v;
     private EditText EventNameField = null;
     private Spinner EventTypeField = null;
-    private EditText LanguageField = null;
+    private Spinner LanguageField = null;
     private EditText LocationField = null;
     private EditText MinSlotsField = null;
     private EditText MaxSlotsField = null;
@@ -38,21 +39,21 @@ public class Tab3 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v =inflater.inflate(R.layout.create_event_activity, container, false);
+        v =inflater.inflate(R.layout.create_event_activity, container, false);
 
         Button ButtonSubmit = (Button) v.findViewById(R.id.submit_new_event);
         ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                EventNameField = (EditText) getActivity().findViewById(R.id.event_name_field);
-                EventTypeField = (Spinner) getActivity().findViewById(R.id.spinner_event_type);
-                DateField = (EditText) getActivity().findViewById(R.id.starting_date_field);
-                LanguageField = (EditText) getActivity().findViewById(R.id.language_field);
-                EndDateField = (EditText) getActivity().findViewById(R.id.ending_date_field);
-                MinSlotsField = (EditText) getActivity().findViewById(R.id.minimum_places_field);
-                MaxSlotsField = (EditText) getActivity().findViewById(R.id.maximum_places_field);
-                DescField = (EditText) getActivity().findViewById(R.id.description_event_field);
+                EventNameField = (EditText) v.findViewById(R.id.event_name_field);
+                EventTypeField = (Spinner) v.findViewById(R.id.spinner_event_type);
+                DateField = (EditText) v.findViewById(R.id.starting_date_field);
+                LanguageField = (Spinner) v.findViewById(R.id.spinner_event_language_create);
+                EndDateField = (EditText) v.findViewById(R.id.ending_date_field);
+                MinSlotsField = (EditText) v.findViewById(R.id.minimum_places_field);
+                MaxSlotsField = (EditText) v.findViewById(R.id.maximum_places_field);
+                DescField = (EditText) v.findViewById(R.id.description_event_field);
 
                 requestInterceptor = new RequestInterceptor() {
                     public void intercept(RequestFacade request) {
@@ -71,10 +72,12 @@ public class Tab3 extends Fragment {
                 eventInformation.createEvent(EventNameField.getText().toString(), DescField.getText().toString(),
                         EventTypeField.getSelectedItem().toString(), MinSlotsField.getText().toString(),
                         MaxSlotsField.getText().toString(), DateField.getText().toString(),
-                        EndDateField.getText().toString(), LanguageField.getText().toString(), new Callback<Response>() {
+                        EndDateField.getText().toString(), LanguageField.getSelectedItem().toString(), new Callback<Response>() {
                             @Override
                             public void success(Response response, Response response2) {
                                 Toast.makeText(getActivity(), "Event created", Toast.LENGTH_SHORT).show();
+                                Intent intent2 = new Intent("com.birdl.birdl.action.menu");
+                                startActivity(intent2);
                             }
 
                             @Override
@@ -82,13 +85,8 @@ public class Tab3 extends Fragment {
                                 Toast.makeText(getActivity(), "bad event request", Toast.LENGTH_SHORT).show();
                             }
                         });
-
-                Intent intent2 = new Intent("com.birdl.birdl.action.menu");
-                startActivity(intent2);
             }
         });
-
-
         return v;
     }
 }

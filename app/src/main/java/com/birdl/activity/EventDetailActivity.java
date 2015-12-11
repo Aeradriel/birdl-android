@@ -47,7 +47,7 @@ public class EventDetailActivity extends AppCompatActivity {
         EventTypeField.setText(AllEventResponseStatic.events.get(position).getType());
 
         LanguageField = (EditText) findViewById(R.id.EventLanguageField);
-        LanguageField.setText(null);
+        LanguageField.setText(AllEventResponseStatic.events.get(position).getLanguage());
 
         LocationField = (EditText) findViewById(R.id.LocationField);
         LocationField.setText(AllEventResponseStatic.events.get(position).getLocation());
@@ -56,7 +56,7 @@ public class EventDetailActivity extends AppCompatActivity {
         MaxSlotsField.setText(String.valueOf(AllEventResponseStatic.events.get(position).getMax_slots()));
 
         DescField = (EditText) findViewById(R.id.DescField);
-        MaxSlotsField.setText(AllEventResponseStatic.events.get(position).getDesc());
+        DescField.setText(AllEventResponseStatic.events.get(position).getDesc());
 
         customtoolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(customtoolbar);

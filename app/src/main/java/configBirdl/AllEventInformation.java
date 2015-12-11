@@ -26,9 +26,12 @@ public class AllEventInformation {
     public int owner_id;
     @SerializedName("address_id")
     public int address_id;
-    //String language;
+    @SerializedName("language")
+    public String language;
     @SerializedName("location")
     public String location;
+    @SerializedName("free_slots")
+    public int free_slots;
 
     public String getLocation() {
         return location;
@@ -36,6 +39,7 @@ public class AllEventInformation {
 
     public void setLocation(String location) {
         this.location = location;
+
     }
 
     public int getId() {
@@ -102,11 +106,27 @@ public class AllEventInformation {
         this.owner_id = owner_id;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public int getAddress_id() {
         return address_id;
     }
 
     public void setAddress_id(int address_id) {
         this.address_id = address_id;
+    }
+
+    public int getFree_slots() {
+        return free_slots;
+    }
+
+    public void setFree_slots(int free_slots) {
+        this.free_slots = free_slots;
     }
 }

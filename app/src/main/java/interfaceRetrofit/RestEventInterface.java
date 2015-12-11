@@ -14,7 +14,13 @@ import retrofit.http.Path;
  */
 public interface RestEventInterface {
     @GET("/api/events")
-    void getInfo(Callback<AllEventResponse> callback);
+    void getAllEvent(Callback<AllEventResponse> callback);
+
+    @GET("/api/events/future")
+    void getFutureEvent(Callback<AllEventResponse> callback);
+
+    @GET("/api/events/past")
+    void getPastEvent(Callback<AllEventResponse> callback);
 
     @POST("/api/events/register/{id}")
     void registerUser(@Path("id") String query, Callback<Response> callback);

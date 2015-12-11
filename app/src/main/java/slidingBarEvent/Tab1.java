@@ -33,6 +33,7 @@ public class Tab1 extends Fragment {
     private View v;
     private BirdlConfigNetwork eventNetwork;
     private RestInterface restEvent;
+    private ArrayList events_list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class Tab1 extends Fragment {
 
         eventNetwork = new BirdlConfigNetwork();
         restEvent = new RestInterface(eventNetwork, "event");
-        restEvent.getEventInterface().getInfo(new Callback<AllEventResponse>() {
+        restEvent.getEventInterface().getFutureEvent(new Callback<AllEventResponse>() {
             @Override
             public void success(AllEventResponse allEventResponse, Response response3) {
 
@@ -55,9 +56,11 @@ public class Tab1 extends Fragment {
                             allEventResponse.events.get(i).getDesc(),
                             allEventResponse.events.get(i).getOwner_id(),
                             allEventResponse.events.get(i).getAddress_id(),
-                            allEventResponse.events.get(i).getLocation()));
+                            allEventResponse.events.get(i).getLanguage(),
+                            allEventResponse.events.get(i).getLocation(),
+                            allEventResponse.events.get(i).getFree_slots()));
                 }
-                ArrayList events_list = AllEventResponseStatic.events;
+                events_list = AllEventResponseStatic.events;
                 lv1 = (ListView) v.findViewById(R.id.list_event);
                 lv1.setAdapter(new CustomListAdapter(getActivity(), AllEventResponseStatic.events));
                 lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -77,6 +80,4 @@ public class Tab1 extends Fragment {
         });
         return v;
     }
-
-
 }

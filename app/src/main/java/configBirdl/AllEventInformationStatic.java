@@ -15,10 +15,11 @@ public class AllEventInformationStatic {
     public String desc;
     public int owner_id;
     public int address_id;
-    //public String languag1e;
+    public String language;
     public String location;
+    public int free_slots;
 
-    public AllEventInformationStatic(int id, String name, String type, int min_slots, int max_slots, String date, String desc, int owner_id, int address_id, String location)
+    public AllEventInformationStatic(int id, String name, String type, int min_slots, int max_slots, String date, String desc, int owner_id, int address_id, String language, String location, int free_slots)
     {
         this.id = id;
         this.name = name;
@@ -29,7 +30,10 @@ public class AllEventInformationStatic {
         this.desc = desc;
         this.owner_id = owner_id;
         this.address_id = address_id;
+        this.language = language;
         this.location = location;
+        this.free_slots = free_slots;
+
     }
 
     public int getId() {
@@ -104,11 +108,27 @@ public class AllEventInformationStatic {
         this.address_id = address_id;
     }
 
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public String getLocation() {
         return location;
     }
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public int getFree_slots() {
+        return free_slots;
+    }
+
+    public void setFree_slots(int free_slots) {
+        this.free_slots = free_slots;
     }
 }
