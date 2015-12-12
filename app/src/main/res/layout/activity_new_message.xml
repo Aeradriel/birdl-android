@@ -12,13 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Destinataire"
-        android:id="@+id/editText" />
+        android:id="@+id/receiver_id" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id="@+id/editText2"
+        android:id="@+id/content_msg"
         android:hint="Message"
         android:layout_weight="0.45"
         android:gravity="top" />
@@ -30,7 +30,7 @@
         android:text="Envoyer"
         android:textSize="20dp"
         android:textColor="@android:color/white"
-        android:id="@+id/button"
+        android:id="@+id/send_but"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.05"
         android:background="@color/colorPrimary"/>
