@@ -23,7 +23,7 @@ import retrofit.client.Response;
 
 public class NewMessageActivity extends Fragment {
     private BirdlConfigNetwork msgNetwork;
-    private RestMessageInterface restCaller;
+    private RestInterface restCaller;
     private EditText receiver_id;
     private String sender_id;
     private EditText content_msg;
@@ -34,7 +34,6 @@ public class NewMessageActivity extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         msgNetwork = new BirdlConfigNetwork();
-        sendMethod();
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +43,7 @@ public class NewMessageActivity extends Fragment {
         receiver_id = (EditText) rootView.findViewById(R.id.receiver_id);
         content_msg = (EditText) rootView.findViewById(R.id.content_msg);
         sender_id = String.valueOf(UserInformationStatic.getId());
+        sendMethod();
         return rootView;
 
     }
@@ -56,8 +56,8 @@ public class NewMessageActivity extends Fragment {
                         Thread start = new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                restCaller = msgNetwork.getRestAdapter().create(RestMessageInterface.class);
-                                restCaller.createMessage(sender_id, receiver_id.toString(), content_msg.toString(), new Callback<Response>() {
+                                restCaller = new RestInterface(msgNetwork, "message");
+                                restCaller.getMessageInterface().createMessage(sender_id, receiver_id.getText().toString(), content_msg.getText().toString(), new Callback<Response>() {
                                     @Override
                                     public void success(Response response, Response response2) {
                                         Toast.makeText(getActivity(), "Message envoyé", Toast.LENGTH_LONG).show();

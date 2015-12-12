@@ -24,6 +24,6 @@ public interface RestMessageInterface {
     void getMessageRelations(Callback<Response> callback);
 
     @FormUrlEncoded
-    @POST("/api/events/create")
+    @POST("/api/messages/new")
     void createMessage(@Field("sender_id") String senderId, @Field("receiver_id") String receiverId, @Field("content") String content, Callback<Response> callback);
 }
