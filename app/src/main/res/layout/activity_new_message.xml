@@ -7,12 +7,12 @@
     android:weightSum="1"
     android:background="@android:color/white">
 
-    <EditText
+    <Spinner
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Destinataire"
-        android:id="@+id/receiver_id" />
+        android:id="@+id/receiver_spinner" />
 
     <EditText
         android:layout_width="match_parent"

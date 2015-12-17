@@ -2,6 +2,7 @@ package interfaceRetrofit;
 
 import configBirdl.LoginResponse;
 
+import configBirdl.RelationsResponse;
 import configBirdl.UserResponse;
 import retrofit.Callback;
 import retrofit.http.Field;
@@ -33,4 +34,8 @@ public interface RestUserInterface {
     @FormUrlEncoded
     @POST("/api/me")
     void setInfo(@Field("password") String pwd, @Field("user") String query, Callback<UserResponse> callback);
+
+    // Get user relations
+    @GET("/api/user/relations")
+    void getRelations(Callback<RelationsResponse> callback);
 }

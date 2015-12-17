@@ -30,8 +30,7 @@ import retrofit.client.Response;
 public class Tab1 extends Fragment {
 
     private ListView lv1;
-    private View v;
-    private BirdlConfigNetwork eventNetwork;
+    private View v;private BirdlConfigNetwork eventNetwork;
     private RestInterface restEvent;
     private ArrayList events_list;
 
