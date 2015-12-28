@@ -71,7 +71,6 @@
         android:layout_height="wrap_content"
         android:text="@string/register_session"
         android:id="@+id/remember_logs"
-        android:checked="false"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:layout_below="@+id/connect_button"

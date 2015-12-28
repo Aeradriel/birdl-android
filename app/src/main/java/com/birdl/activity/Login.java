@@ -1,12 +1,16 @@
 package com.birdl.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,13 +30,17 @@ import retrofit.client.Response;
 public class Login extends Activity {
     private static EditText username;
     private static EditText password;
+    private static CheckBox remember;
     private static Button login;
     private static Button sign_up;
     private static Button others;
     private RestUserInterface restUserInterface;
     private RestInterface restInterface;
     private BirdlConfigNetwork userNetwork;
-    static UserInformationStatic InformationStatic;
+    private UserInformationStatic InformationStatic;
+    private SharedPreferences loginPreferences;
+    private SharedPreferences.Editor loginPrefsEditor;
+    private boolean saveLogin;
     public static String getPasswordToString(){
         return password.getText().toString();
     }
@@ -41,17 +49,28 @@ public class Login extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        userNetwork = new BirdlConfigNetwork();
-        LoginButton();
-    }
 
-    public void LoginButton() {
         username = (EditText) findViewById(R.id.user_email);
         password = (EditText) findViewById(R.id.user_pwd);
+        remember = (CheckBox) findViewById(R.id.remember_logs);
         login = (Button) findViewById(R.id.connect_button);
         sign_up = (Button) findViewById(R.id.sign_up);
         others = (Button) findViewById(R.id.othersign);
 
+        userNetwork = new BirdlConfigNetwork();
+        loginPreferences = getSharedPreferences("loginPrefs", MODE_PRIVATE);
+        loginPrefsEditor = loginPreferences.edit();
+        saveLogin = loginPreferences.getBoolean("saveLogin", false);
+        if (saveLogin)
+        {
+            username.setText(loginPreferences.getString("username", ""));
+            password.setText(loginPreferences.getString("password", ""));
+            remember.setChecked(true);
+        }
+        LoginButton();
+    }
+
+    public void LoginButton() {
         login.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -82,6 +101,20 @@ public class Login extends Activity {
                                                                                           SessionInformation.AccessToken,
                                                                                           password.getText().toString());
 
+                                                                                  InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+                                                                                  imm.hideSoftInputFromWindow(username.getWindowToken(), 0);
+                                                                                  if (remember.isChecked())
+                                                                                  {
+                                                                                      loginPrefsEditor.putBoolean("saveLogin", true);
+                                                                                      loginPrefsEditor.putString("username", username.getText().toString());
+                                                                                      loginPrefsEditor.putString("password", password.getText().toString());
+                                                                                      loginPrefsEditor.commit();
+                                                                                  }
+                                                                                  else
+                                                                                  {
+                                                                                      loginPrefsEditor.clear();
+                                                                                      loginPrefsEditor.commit();
+                                                                                  }
                                                                                   Toast.makeText(Login.this, "Logged in", Toast.LENGTH_LONG).show();
                                                                                   Intent intent = new Intent("com.birdl.birdl.action.menu");
                                                                                   startActivity(intent);
