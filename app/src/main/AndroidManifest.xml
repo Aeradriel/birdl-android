@@ -85,10 +85,9 @@
 
         <activity
             android:name="com.birdl.activity.GoogleSignIn"
-            android:label="Connexion Google ou Facebook" >
+            android:label="Connexion Google" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.googlesignin" />
-                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 

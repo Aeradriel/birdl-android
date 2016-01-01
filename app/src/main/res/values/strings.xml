@@ -121,6 +121,11 @@
     <!-- menu main -->
     <string name="action_about_birdl">About Bird\'l</string>
     <string name="action_settings">Settings</string>
+    <string name="receiver_id">Destinataire</string>
+    <string name="loading">Loading</string>
+    <string name="signed_in_fmt">Signed :)</string>
+    <string name="Sign_Out">Sign Out</string>
+    <string name="signed_out">Signed Out :)</string>
 
     <!-- COUNTRY LIST -->
     <string-array name="country_names">
