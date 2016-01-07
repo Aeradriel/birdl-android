@@ -24,11 +24,12 @@ public class GoogleSignIn extends AppCompatActivity implements GoogleApiClient.O
         View.OnClickListener {
 
     private static final String TAG = "SignInActivity";
-    private static final int RC_SIGN_IN = 9001;
+    private static final int RC_SIGN_IN = 0;
 
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private ProgressDialog mProgressDialog;
+    private static final String CLIENT_ID = "672573300786-3os9a77p178s60qmefk2omlo4mhm4ljh.apps.googleusercontent.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class GoogleSignIn extends AppCompatActivity implements GoogleApiClient.O
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
+                .requestServerAuthCode(CLIENT_ID)
                 .build();
         // [END configure_signin]
 
