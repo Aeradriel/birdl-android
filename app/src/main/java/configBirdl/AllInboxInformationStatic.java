@@ -5,15 +5,20 @@ package configBirdl;
  */
 public class AllInboxInformationStatic {
     public int id;
-    public String name;
-    public String date;
-    public int owner_id;
+    public String sender_name;
+    public String receiver_name;
+    public int sender_id;
+    public int receiver_id;
+    public String content;
 
-    public AllInboxInformationStatic(int id, String name, String date)
+    public AllInboxInformationStatic(int id, int sender_id, int receiver_id, String sender_name, String receiver_name, String content)
     {
         this.id = id;
-        this.name = name;
-        this.date = date;
+        this.sender_name = sender_name;
+        this.receiver_id = receiver_id;
+        this.sender_id = sender_id;
+        this.receiver_name = receiver_name;
+        this.content = content;
     }
 
     public int getId() {
@@ -23,28 +28,45 @@ public class AllInboxInformationStatic {
     public void setId(int id) {
         this.id = id;
     }
-
-    public String getName() {
-        return name;
+    public String getSender_name() {
+        return sender_name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSender_name(String sender_name) {
+        this.sender_name = sender_name;
     }
 
-    public String getDate() {
-        return date;
+    public String getReceiver_name() {
+        return receiver_name;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setReceiver_name(String receiver_name) {
+        this.receiver_name = receiver_name;
     }
 
-    public int getOwner_id() {
-        return owner_id;
+    public int getSender_id() {
+        return sender_id;
     }
 
-    public void setOwner_id(int owner_id) {
-        this.owner_id = owner_id;
+    public void setSender_id(int sender_id) {
+        this.sender_id = sender_id;
     }
+
+    public int getReceiver_id() {
+        return receiver_id;
+    }
+
+    public void setReceiver_id(int receiver_id) {
+        this.receiver_id = receiver_id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+
 }

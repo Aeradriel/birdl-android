@@ -5,10 +5,12 @@ import configBirdl.LoginResponse;
 import configBirdl.RelationsResponse;
 import configBirdl.UserResponse;
 import retrofit.Callback;
+import retrofit.client.Response;
 import retrofit.http.Field;
 import retrofit.http.FormUrlEncoded;
 import retrofit.http.GET;
 import retrofit.http.POST;
+import retrofit.http.Query;
 
 /**
  * Created by Christophe on 14/09/2015.
