@@ -10,7 +10,10 @@ import android.widget.TextView;
 
 import com.birdl.activity.R;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import configBirdl.AllEventInformationStatic;
 import configBirdl.AllInboxInformationStatic;
@@ -65,8 +68,31 @@ public class CustomListAdapter extends BaseAdapter {
         holder.headlineView.setText(listEvent.get(position).getName());
         holder.reporterNameView.setText("Language: " + listEvent.get(position).getLanguage());
         holder.reporterFreeSlots.setText("Free slots: " + listEvent.get(position).getFree_slots());
-        holder.reportedDateView.setText(listEvent.get(position).getDate());
+        String date = parseDateTime(listEvent.get(position).getDate());
+        holder.reportedDateView.setText(date);
         return convertView;
+    }
+
+    private String parseDateTime(String time)
+    {
+        String inputPattern = "yyyy-MM-dd'T'HH:mm:ss.SSS";
+        String outputPattern = "dd MMM yyyy";
+
+        SimpleDateFormat inputFormat = new SimpleDateFormat(inputPattern);
+        SimpleDateFormat outputFormat = new SimpleDateFormat(outputPattern);
+
+        Date date = null;
+        String str = null;
+
+        try
+        {
+            date = inputFormat.parse(time);
+            str = outputFormat.format(date);
+        } catch (ParseException e)
+        {
+            e.printStackTrace();
+        }
+        return str;
     }
 
     static class ViewHolder {

@@ -11,7 +11,7 @@ import retrofit.android.AndroidLog;
  */
 public class BirdlConfigNetwork {
 
-    private static String API_URL = "http://birdl.xyz:3000/";
+    private static String API_URL = "http://birdl.xyz:3000/"/*"http://163.5.84.208:3000/"*/;
     private static RestAdapter restAdapter;
     private static RequestInterceptor requestInterceptor;
     private static RestAdapter restAdapterHeader;

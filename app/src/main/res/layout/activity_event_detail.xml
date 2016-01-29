@@ -5,7 +5,6 @@
     android:background="@drawable/color18">
 
     <include
-
         layout="@layout/toolbar"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
@@ -17,17 +16,16 @@
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Event name"
-            android:textSize="21sp"
-            android:id="@+id/EventName" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:focusable="false"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:textStyle="bold"
             android:id="@+id/EventNameField"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:clickable="false" />
     </LinearLayout>
 
     <LinearLayout
@@ -130,17 +128,39 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="45dp"
-        android:layout_marginLeft="20dp"
-        >
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="28sp"
-            android:text="S'inscrire"
+            android:text="Validate presence"
+            android:textColor="@android:color/white"
+            android:background="#BDBDBD"
+            android:id="@+id/buttonPresence"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0.5" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:text="@string/event_detail_button_sub"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimary"
             android:id="@+id/buttonSubscribe"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 

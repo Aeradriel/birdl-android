@@ -9,16 +9,24 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.wearable.MessageApi;
+import com.google.android.gms.wearable.Node;
+import com.google.android.gms.wearable.NodeApi;
+import com.google.android.gms.wearable.Wearable;
 import configBirdl.UserInformationStatic;
 import fragment.FragmentDrawer;
 
-public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener {
+public class MainActivity extends AppCompatActivity implements FragmentDrawer.FragmentDrawerListener,
+                                                                GoogleApiClient.ConnectionCallbacks,
+                                                                GoogleApiClient.OnConnectionFailedListener {
 
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
@@ -26,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
     public static Bitmap defaultImage = null;
     public static TextView FirstName;
     public static String FirstNameModif = null;
+    GoogleApiClient googleClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +84,13 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
                 startActivity(intent);
             }
         });
+
+        // Build GoogleApiClient for the Wearable API
+        googleClient = new GoogleApiClient.Builder(this)
+                .addApi(Wearable.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
 
         displayView(0);
     }
@@ -194,4 +210,54 @@ public class MainActivity extends AppCompatActivity implements FragmentDrawer.Fr
             getSupportActionBar().setTitle(title);
         }
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        googleClient.connect();
+    }
+
+    @Override
+    public void onConnected(Bundle connectionHint) {
+        String message = "Hello wearable\n Via the data layer";
+        new SendToDataLayerThread("/message_path", message).start();
+    }
+
+    class SendToDataLayerThread extends Thread {
+        String path;
+        String message;
+
+        // Constructor to send a message to the data layer
+        SendToDataLayerThread(String p, String msg) {
+            path = p;
+            message = msg;
+        }
+
+        public void run() {
+            NodeApi.GetConnectedNodesResult nodes = Wearable.NodeApi.getConnectedNodes(googleClient).await();
+            for (Node node : nodes.getNodes()) {
+                MessageApi.SendMessageResult result = Wearable.MessageApi.sendMessage(googleClient, node.getId(), path, message.getBytes()).await();
+                if (result.getStatus().isSuccess()) {
+                    Log.i("myTag", "Message: {" + message + "} sent to: " + node.getDisplayName());
+                } else {
+                    // Log an error
+                    Log.i("myTag", "ERROR: failed to send Message");
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void onStop() {
+        if (null != googleClient && googleClient.isConnected()) {
+            googleClient.disconnect();
+        }
+        super.onStop();
+    }
+
+    @Override
+    public void onConnectionSuspended(int cause) { }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) { }
 }

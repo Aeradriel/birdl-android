@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -25,35 +26,27 @@ import retrofit.client.Response;
 
 public class Tab3 extends Fragment {
     private View v;
-    private EditText EventNameField = null;
-    private Spinner EventTypeField = null;
-    private Spinner LanguageField = null;
-    private EditText LocationField = null;
-    private EditText MinSlotsField = null;
-    private EditText MaxSlotsField = null;
-    private EditText DateField = null;
-    private EditText EndDateField = null;
-    private EditText DescField = null;
+    private EditText EventNameField;
+    private Spinner EventTypeField;
+    private Spinner LanguageField;
+    private EditText LocationField;
+    private EditText MinSlotsField;
+    private EditText MaxSlotsField;
+    private DatePicker DateField;
+    private DatePicker EndDateField;
+    private EditText DescField;
+    private Button ButtonSubmit;
     private RestAdapter restAdapterHeader;
     private RequestInterceptor requestInterceptor;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         v =inflater.inflate(R.layout.create_event_activity, container, false);
+        bindView();
 
-        Button ButtonSubmit = (Button) v.findViewById(R.id.submit_new_event);
         ButtonSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                EventNameField = (EditText) v.findViewById(R.id.event_name_field);
-                EventTypeField = (Spinner) v.findViewById(R.id.spinner_event_type);
-                DateField = (EditText) v.findViewById(R.id.starting_date_field);
-                LanguageField = (Spinner) v.findViewById(R.id.spinner_event_language_create);
-                EndDateField = (EditText) v.findViewById(R.id.ending_date_field);
-                MinSlotsField = (EditText) v.findViewById(R.id.minimum_places_field);
-                MaxSlotsField = (EditText) v.findViewById(R.id.maximum_places_field);
-                DescField = (EditText) v.findViewById(R.id.description_event_field);
 
                 requestInterceptor = new RequestInterceptor() {
                     public void intercept(RequestFacade request) {
@@ -61,7 +54,7 @@ public class Tab3 extends Fragment {
                     }
                 };
 
-                restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://163.5.84.208:3000/")
+                restAdapterHeader = new RestAdapter.Builder().setEndpoint("http://birdl.xyz:3000/")
                         .setRequestInterceptor(requestInterceptor)
                         .setLogLevel(RestAdapter.LogLevel.FULL)
                         .setLog(new AndroidLog("log retrofit"))
@@ -71,13 +64,13 @@ public class Tab3 extends Fragment {
 
                 eventInformation.createEvent(EventNameField.getText().toString(), DescField.getText().toString(),
                         EventTypeField.getSelectedItem().toString(), MinSlotsField.getText().toString(),
-                        MaxSlotsField.getText().toString(), DateField.getText().toString(),
-                        EndDateField.getText().toString(), LanguageField.getSelectedItem().toString(), new Callback<Response>() {
+                        MaxSlotsField.getText().toString(), formatDate(DateField), formatDate(EndDateField),
+                        LocationField.getText().toString(), LanguageField.getSelectedItem().toString(), new Callback<Response>() {
                             @Override
                             public void success(Response response, Response response2) {
                                 Toast.makeText(getActivity(), "Event created", Toast.LENGTH_SHORT).show();
-                                Intent intent2 = new Intent("com.birdl.birdl.action.menu");
-                                startActivity(intent2);
+                                Intent intent = new Intent("com.birdl.birdl.SlidingEventLayout");
+                                startActivity(intent);
                             }
 
                             @Override
@@ -88,5 +81,39 @@ public class Tab3 extends Fragment {
             }
         });
         return v;
+    }
+
+    private String formatDate(DatePicker datePicker)
+    {
+        int day = datePicker.getDayOfMonth();
+        String formattedDay = String.valueOf(day);
+        int month = datePicker.getMonth() + 1;
+        String formattedMonth = String.valueOf(month);
+        int year = datePicker.getYear();
+
+        if (day < 10)
+            formattedDay = "0" + day;
+        if (month < 10)
+            formattedMonth = "0" + month;
+
+        String date = String.valueOf(year)+ "/" +
+                formattedMonth + "/" +
+                formattedDay;
+
+        return date;
+    }
+
+    private void bindView()
+    {
+        ButtonSubmit = (Button) v.findViewById(R.id.submit_new_event);
+        EventNameField = (EditText) v.findViewById(R.id.event_name_field);
+        EventTypeField = (Spinner) v.findViewById(R.id.spinner_event_type);
+        DateField = (DatePicker) v.findViewById(R.id.starting_date_field);
+        LanguageField = (Spinner) v.findViewById(R.id.spinner_event_language_create);
+        EndDateField = (DatePicker) v.findViewById(R.id.ending_date_field);
+        MinSlotsField = (EditText) v.findViewById(R.id.minimum_places_field);
+        MaxSlotsField = (EditText) v.findViewById(R.id.maximum_places_field);
+        LocationField = (EditText) v.findViewById(R.id.location_event_field);
+        DescField = (EditText) v.findViewById(R.id.description_event_field);
     }
 }

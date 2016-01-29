@@ -12,14 +12,6 @@
         />
 
     <TextView
-        android:id="@+id/txt2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/Terms_and_agreement_of_service"
-        android:textSize="20dp" />
-    <TextView
         android:id="@+id/txt3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,16 +19,6 @@
         android:layout_marginTop="40dp"
         android:text="@string/Use_of_BIRDL"
         android:textSize="20dp" />
-
-    <TextView
-        android:layout_width="386dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Android Developpers : Christophe Crocheton &amp; Serkan Sahin"
-        android:id="@+id/textView2"
-        android:textSize="20dp"
-        android:gravity="center"
-        android:layout_marginTop="15dp"/>
 
     <TextView
         android:id="@+id/txt4"
@@ -49,17 +31,11 @@
     <Button
         android:layout_width="200dp"
         android:layout_height="80dp"
-        android:text="Ok"
+        android:text="Return"
         android:textSize="20dp"
         android:textColor="@android:color/white"
         android:id="@+id/ok_about"
         android:background="@color/colorPrimary"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="60sp"/>
-
-    <SeekBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/seekBar"
-        android:layout_gravity="right" />
 </LinearLayout>

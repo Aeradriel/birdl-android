@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -16,6 +17,8 @@ public class SettingsActivity extends Activity {
     Toolbar customtoolbar;
     public static String application_language_selection_init = null;
     public static String application_language_selection = "English";
+    private static CheckBox notification;
+    public static String getnotif = "check";
     private Spinner spinner_language;
     private static Button ButtonSubmit;
     private static TextView get_notification;
@@ -29,6 +32,15 @@ public class SettingsActivity extends Activity {
         application_language_selection_init = application_language_selection;
 
         customtoolbar = (Toolbar) findViewById(R.id.toolbar);
+        notification = (CheckBox) findViewById(R.id.checkBox1);
+        notification.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked())
+                    getnotif = "check";
+                else
+                    getnotif = "uncheck";
+            }
+        });
 
         customtoolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override

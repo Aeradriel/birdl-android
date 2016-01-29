@@ -30,17 +30,18 @@ import retrofit.client.Response;
 public class Tab1 extends Fragment {
 
     private ListView lv1;
-    private View v;private BirdlConfigNetwork eventNetwork;
+    private View v;
+    private BirdlConfigNetwork eventNetwork;
     private RestInterface restEvent;
     private ArrayList events_list;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v =inflater.inflate(R.layout.activity_list_event,container,false);
+        v = inflater.inflate(R.layout.activity_list_event,container,false);
 
         eventNetwork = new BirdlConfigNetwork();
         restEvent = new RestInterface(eventNetwork, "event");
-        restEvent.getEventInterface().getFutureEvent(new Callback<AllEventResponse>() {
+        restEvent.getEventInterface().getAllEvent(new Callback<AllEventResponse>() {
             @Override
             public void success(AllEventResponse allEventResponse, Response response3) {
 

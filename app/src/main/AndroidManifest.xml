@@ -11,6 +11,9 @@
         android:icon="@drawable/nlogo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
+        <meta-data android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <activity
             android:name="com.birdl.activity.Login"
             android:label="@string/app_name"
@@ -22,35 +25,40 @@
             </intent-filter>
         </activity>
         <activity android:name="com.birdl.activity.MainActivity"
-                  android:label="@string/app_name">
+                  android:label="@string/app_name"
+                android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.birdl.birdl.action.menu" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.birdl.activity.SettingsActivity" >
+        <activity android:name="com.birdl.activity.SettingsActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="com.birdl.birdl.SettingsActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.birdl.activity.AboutActivity" >
+        <activity android:name="com.birdl.activity.AboutActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.AboutActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.birdl.activity.SetProfilActivity" >
+        <activity android:name="com.birdl.activity.SetProfilActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.SetProfilActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="slidingBarEvent.SlidingEventLayout" >
+        <activity android:name="slidingBarEvent.SlidingEventLayout"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.SlidingEventLayout" />
 
@@ -59,7 +67,8 @@
         </activity>
         <activity
             android:name="com.birdl.activity.SignUp"
-            android:label="Inscription" >
+            android:label="Inscription"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.signupactivity" />
 
@@ -67,7 +76,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.birdl.activity.EventDetailActivity">
+            android:name="com.birdl.activity.EventDetailActivity"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.EventDetailActivity" />
 
@@ -76,7 +86,8 @@
         </activity>
         <activity
             android:name="com.birdl.activity.Confirmation"
-            android:label="Une dernière étape..." >
+            android:label="Une dernière étape..."
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.signupconfirmation" />
 
@@ -86,7 +97,8 @@
 
         <activity
             android:name="com.birdl.activity.GoogleSignIn"
-            android:label="Connexion Google" >
+            android:label="Connexion Google"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="com.birdl.birdl.googlesignin" />
             </intent-filter>
@@ -96,7 +108,8 @@
             android:name="com.birdl.activity.CountrycodeActivity"
             android:theme="@android:style/Theme.Holo.Light.Dialog"
             android:noHistory="true"
-            android:label="Select your country">
+            android:label="Select your country"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

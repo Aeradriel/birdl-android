@@ -20,6 +20,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import configBirdl.RestInterface;
+import configBirdl.UserInformationStatic;
 import interfaceRetrofit.RestUserInterface;
 import configBirdl.UserResponse;
 import retrofit.Callback;
@@ -96,7 +97,10 @@ public class SetProfilActivity extends Activity {
                 RestInterface.getUserInterface().setInfo(pass, query, new Callback<UserResponse>() {
                     @Override
                     public void success(UserResponse userResponse, Response response) {
+                        UserInformationStatic.setFirst_name(FirstNameField.getText().toString());
                         Toast.makeText(SetProfilActivity.this, "Update Success", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent("com.birdl.birdl.action.menu");
+                        startActivity(intent);
                     }
 
                     @Override
@@ -104,9 +108,6 @@ public class SetProfilActivity extends Activity {
                         Toast.makeText(SetProfilActivity.this, "Update Failure", Toast.LENGTH_SHORT).show();
                     }
                 });
-                //MainActivity.FirstNameModif = FirstNameField.getText().toString();
-                Intent intent = new Intent("com.birdl.birdl.action.menu");
-                startActivity(intent);
             }
         });
     }

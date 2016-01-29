@@ -16,15 +16,12 @@
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="21sp"
-            android:id="@+id/event_name" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="28sp"
+            android:hint="Event name"
             android:id="@+id/event_name_field"
             android:layout_weight="1" />
     </LinearLayout>
@@ -76,7 +73,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:textSize="21sp"
-            android:id="@+id/starting_date" />
+            android:id="@+id/description" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,56 +127,53 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Starting date"
-            android:textSize="21sp"
-            android:id="@+id/starting_date" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:id="@+id/starting_date_field"
-            android:layout_weight="1"
-            android:hint="yyyy/mm/jj" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ending date"
-            android:textSize="21sp"
-            android:id="@+id/ending_date" />
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="date"
-            android:id="@+id/ending_date_field"
-            android:layout_weight="1"
-            android:hint="yyyy/mm/jj" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Location"
             android:textSize="21sp"
-            android:id="@+id/starting_date" />
+            android:id="@+id/location" />
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/location_event_field"
             android:layout_weight="1"/>
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Starting date"
+            android:textSize="21sp"
+            android:id="@+id/starting_date" />
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/starting_date_field"
+            android:layout_weight="1"
+            android:calendarViewShown="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:gravity="center" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ending date"
+            android:textSize="21sp"
+            android:id="@+id/ending_date" />
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ending_date_field"
+            android:layout_weight="1"
+            android:calendarViewShown="false" />
+    </LinearLayout>
     <Button
         android:layout_width="200dp"
         android:layout_marginTop="25dp"

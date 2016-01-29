@@ -1,11 +1,12 @@
 ﻿<resources>
+    <string name="notify">Notify Wearable</string>
     <string name="hello_world">Hello world!</string>
     <string name="Policy_and_privacy">Policy and privacy</string>
     <string name="new_event">New event</string>
     <string name="places_remaining">Places remaining</string>
     <string name="event_type">Event type</string>
     <string name="Terms_and_agreement_of_service">Terms and agreement of service</string>
-    <string name="Use_of_BIRDL">Use of BIRDL</string>
+    <string name="Use_of_BIRDL">Android developer</string>
     <string name="event_prompt">Event type</string>
     <string name="user_name">User name</string>
     <string name="action_search">Search</string>
@@ -27,7 +28,7 @@
         <item>Italian</item>
         <item>German</item>
     </string-array>
-    <string name="Privacy_policy">Privacy policy</string>
+    <string name="Privacy_policy">Christophe Crocheton &amp; Serkan Sahin</string>
     <color name="selected">#824986</color>
     <color name="unselected">#E4DFEC</color>
     <string name="app_name">"Bird\'L"</string>
@@ -126,6 +127,10 @@
     <string name="signed_in_fmt">Signed :)</string>
     <string name="Sign_Out">Sign Out</string>
     <string name="signed_out">Signed Out :)</string>
+
+    <!-- event detail -->
+    <string name="event_detail_button_sub">Subscribe</string>
+    <string name="event_detail_button_unsub">Unsubscribe</string>
 
     <!-- COUNTRY LIST -->
     <string-array name="country_names">
