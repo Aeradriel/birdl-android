@@ -99,7 +99,7 @@ public class EventDetailActivity extends AppCompatActivity {
                                 {
                                     if (current.compareTo(event)>0 || current.compareTo(event)==0)
                                     {
-                                            restEvent.getEventInterface().confirmPresence(query, String.valueOf(UserInformationStatic.getId()), "yes", new Callback<Response>() {
+                                            restEvent.getEventInterface().confirmPresence(String.valueOf(UserInformationStatic.getId()), query, "yes", new Callback<Response>() {
                                                 @Override
                                                 public void success(Response response, Response response2) {
                                                     Toast.makeText(EventDetailActivity.this, "Presence confirmed", Toast.LENGTH_SHORT).show();
